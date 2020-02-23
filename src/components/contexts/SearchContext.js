@@ -16,7 +16,7 @@ const SearchContextProvider = (props) => {
 
     const handleSubmission = (e) => {
         e.preventDefault()
-        axios.get(`http://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchField}`)
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchField}`)
             .then(res => {
 
                 setMoviesList(res.data.results)
