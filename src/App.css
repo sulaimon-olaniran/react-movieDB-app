@@ -1,0 +1,29 @@
+
+.app {
+  height: 100%;
+ 
+}
+.navigation {
+  position: fixed;
+  top: 0px;
+  overflow: hidden;
+  height: 10vh;
+  width: 100%;
+  box-shadow: 0 8px 6px -6px #333;
+  z-index: 9999;
+}
+body{
+  background-color: lightgray;
+}
+
+
+.main-container {
+  margin-top: 10vh;
+  width: 100%;
+  min-height: 90vh;
+}
+
+footer {
+  height: 10vh;
+  background-color: rgb(83, 82, 82);
+}
