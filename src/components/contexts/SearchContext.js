@@ -21,6 +21,7 @@ const SearchContextProvider = (props) => {
     const backToSearch = (e) => {
         e.preventDefault()
         setMoviesList([])
+        setTotalmovies(null)
     }
 
 
