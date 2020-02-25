@@ -23,6 +23,7 @@ const SearchContextProvider = (props) => {
         setMoviesList([])
     }
 
+
     const handleSubmission = (e) => {
         e.preventDefault()
         if(moviesList.length > 0){
