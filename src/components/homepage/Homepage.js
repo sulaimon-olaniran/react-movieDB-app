@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import '../components.css'
 import SearchMovies from './SearchMovies'
-//import SearchContextProvider from '../contexts/SearchContext'
 import { SearchContext } from '../contexts/SearchContext'
 import MovieList from './MovieList'
 
