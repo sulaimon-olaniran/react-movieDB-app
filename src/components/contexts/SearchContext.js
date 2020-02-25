@@ -33,7 +33,6 @@ const SearchContextProvider = (props) => {
         .then(res => {
             setMoviesList(res.data.results)
             setTotalmovies(res.data.total_results)
-          // setMoviesList(moviesList.concat(res.data.results))
             console.log(res.data)
             console.log(res.data.total_results)
         })
@@ -41,19 +40,6 @@ const SearchContextProvider = (props) => {
             console.log(err)
         })
     }
-
-
-
-        /*
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchField}`)
-            .then(res => {
-                setMoviesList(res.data.results)
-                console.log(res.data)
-            })
-            .catch(err => {
-                console.log(err)
-            })
-    }*/
 
     const fetchMoreData = () => {
         setPages(pages + 1) 
