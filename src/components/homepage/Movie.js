@@ -1,12 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Movie = (props) => {
 
     return (
-        <div className="movie-poster">
+         <Link className="movie-poster" to={`/search/${props.id}`}>
+        
             {
                 props.image === null ? <img src={`https://via.placeholder.com/150/000000/FFFFFF`} alt="Movie Poster" />
-                    : <img src={`https://image.tmdb.org/t/p/w185${props.image}`} alt="Movie Poster" />}
+                    : <img src={`https://image.tmdb.org/t/p/w342${props.image}`} alt="Movie Poster" />}
             <div className="movie-title">
 
                 <p>
@@ -14,7 +16,8 @@ const Movie = (props) => {
                 </p>
             </div>
 
-        </div>
+        
+        </Link>
 
     )
 

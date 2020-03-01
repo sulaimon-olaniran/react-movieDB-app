@@ -16,21 +16,102 @@ nav ul {
 }
 
 nav ul li {
-    
+   padding-right: 5px;
+}
+
+footer {
+    height: 10vh;
+    background-color: rgb(83, 82, 82);
+  }
+
+.slider-container {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cast-slider-con{
+    width: 100%;
+    height: auto;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+.slide-img img{
+    width: 100%;
+    height: 80vh;
+
+}
+.img-slider {
+    min-width: 100%;
+    height: 80vh;
+    transition: 0.5s;
+}
+.character{
+    background-color: whitesmoke;
+    text-align: center;
+    min-height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3px;
+}
+#name{
+    color: rgb(71, 70, 70);
+}
+#character{
+    color: rgb(163, 163, 163);
+}
+
+.cast-slider{
+    min-width: 45%;
+    transition: 0.5s;
+    min-height: auto;
+    margin: 0% 2%;
+}
+.cast-detail img {
+    width: 100%;
+    margin-right: 20px;
+}
+.cast-crew{
+    overflow-y: hidden;
+    min-height: 50vh;
+    width: 100%;
+    margin-right: 10px;
+}
+
+#go-left{
+    position: absolute;
+    left: 0%;
+}
+.slide-button{
+    transform: translateY(-50%);
+   width: 10vh;
+   height: 10vh;
+   background: none;
+}
+
+#go-right{
+    position: absolute;
+    right: 0%;
 }
 
 .search-div {
     display: flex;
-    background-image: url("dunkirkcover.jpeg");
+    background-color:  rgb(37, 33, 33);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    min-height: 90vh;
+    min-height: 80vh;
     align-items: center;
     justify-content: center;
+   
 }
 
-.home-page {
+.search-page {
     height: 100;
     align-items: center;
     justify-content: center;
@@ -82,24 +163,22 @@ input:focus{
 .img-gallary {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-around; 
     margin-top: 9vh;
     width: 100%;
 }
 .movie-poster  {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 45%;
     margin-bottom: 10px;
 }
 
 .movie-poster img {
     width: 100%;
-    height: 250px;
-    display: block;
-   
+    height: 40vh;
+    width: 100%; 
 }
-
 .movie-title {
     display: flex;
     background-color: rgb(92, 91, 91);
@@ -141,5 +220,45 @@ input:focus{
     background-color: #f16051;
     color: #fff;
     border-radius: 10px;
-    
+}
+
+.movie-details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: whitesmoke;
+}
+.details-section{
+    width: 100%;
+    min-height: 50vh;
+    margin-top: 2vh;
+    border-bottom: 3px solid salmon;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.ratings{
+    text-align: center;
+}
+.ratings h3 {
+    font-size: 3vh;
+    margin: 4px;
+}
+.ratings p {
+    font-size: 2.5vh;
+}
+
+.details-img img{
+    width: 100%;
+    height: 50vh;
+    margin-top: 5px;
+}
+.overview p {
+    font-size: 2.2vh;
+    text-align: center;
+    color: whitesmoke;
+    padding: 5px;
+    letter-spacing: 0.8px;
 }

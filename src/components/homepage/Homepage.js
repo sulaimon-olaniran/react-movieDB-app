@@ -1,19 +1,21 @@
-import React, {useContext} from 'react'
+import React from 'react'
 import '../components.css'
-import SearchMovies from './SearchMovies'
-import { SearchContext } from '../contexts/SearchContext'
-import MovieList from './MovieList'
+import ImgSlider from './ImgSlider'
+
 
 
 function Homepage() {
-    const { moviesList} = useContext(SearchContext)
 
     return (
-         
-        <section className="home-page" >
-              {
-                  moviesList.length < 1 ? <SearchMovies /> : <MovieList />}
-        </section>
+        <div>
+            <section className="home" >
+                <ImgSlider />
+            </section>
+            <footer>
+                <h1>Footer</h1>
+            </footer>
+        </div>
+
     )
 
 }

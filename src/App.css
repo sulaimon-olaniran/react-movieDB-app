@@ -18,7 +18,8 @@ body{
 
 
 .main-container {
-  margin-top: 10vh;
+  position: relative;
+  top: 10vh;
   width: 100%;
   min-height: 90vh;
 }
