@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CastCrews from './CastCrews'
+import alterImage from './alterImage.jpg'
 
 
 function MovieDetails({ match }) {
@@ -23,13 +24,14 @@ function MovieDetails({ match }) {
                     <p>Rating : {movie.vote_average}</p>
                 </div>
                 <div className="details-img">
-                    <img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt="Movie Poster" />
+                   { movie.poster_path === null ? <img src={alterImage} alt="Movie Poster" /> :
+                   <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Movie Poster" />}
                 </div>
                 <div className="overview">
                  <p>{movie.overview}</p>
                 </div>
             </section>
-
+            <h3>Movie's Casts</h3>
             <section className="cast-crew">
                 <CastCrews identity={match.params.id}/>
             </section>

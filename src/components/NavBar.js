@@ -1,6 +1,7 @@
 import React from 'react'
 import './components.css'
 import {Link} from 'react-router-dom'
+import pageLog from './pageLog.ico'
 
 function NavBar () {
   const linkStyle = {
@@ -9,7 +10,9 @@ function NavBar () {
    
     return (
         <nav>
-       <h1>Logo</h1>
+        <div className="logo">
+       <img src={pageLog} alt="Logo" />
+       </div>
        <ul>
          <Link style={linkStyle} to="/">
          <li>Home</li>

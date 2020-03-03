@@ -2,17 +2,30 @@ nav {
     display: flex;
     background-color: rgb(83, 82, 82);
     color: white;
-    align-items: center;
     justify-content: center;
-    align-items: center;
     width: 100%;
 }
+.logo{
+  display: flex;
+  width: 30%;
+  height: 85%;
+ 
+ 
+}
+.logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    margin: 5px 0 0 5px;
+}
+
 
 nav ul {
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     list-style: none;
-    width: 80%;
+    width: 70%;
 }
 
 nav ul li {
@@ -58,6 +71,7 @@ footer {
     align-items: center;
     flex-direction: column;
     margin: 3px;
+    border-radius: 15px;
 }
 #name{
     color: rgb(71, 70, 70);
@@ -71,17 +85,22 @@ footer {
     transition: 0.5s;
     min-height: auto;
     margin: 0% 2%;
+   
 }
 .cast-detail img {
     width: 100%;
+    height: 35vh;
     margin-right: 20px;
+    border-radius: 15px;
 }
 .cast-crew{
     overflow-y: hidden;
+    background-color: rgb(119, 118, 118);
     min-height: 50vh;
     width: 100%;
     margin-right: 10px;
 }
+
 
 #go-left{
     position: absolute;
@@ -172,19 +191,23 @@ input:focus{
     flex-direction: column;
     width: 45%;
     margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
 }
 
 .movie-poster img {
     width: 100%;
     height: 40vh;
     width: 100%; 
+    border-radius: 10px;
 }
 .movie-title {
     display: flex;
     background-color: rgb(92, 91, 91);
     color: white;
+    border-radius: 10px;
     text-align: center;
     min-height: 8vh;
+    margin-top: 3px;
     align-items: center;
     justify-content: center;
 }
@@ -222,6 +245,12 @@ input:focus{
     border-radius: 10px;
 }
 
+.movie-details h3 {
+    text-align: center;
+     margin: 5px 0;
+     letter-spacing: 0.5px;
+}
+
 .movie-details{
     width: 100%;
     display: flex;
@@ -249,11 +278,16 @@ input:focus{
 .ratings p {
     font-size: 2.5vh;
 }
+.details-img{
+    width: 90%;
+}
 
 .details-img img{
     width: 100%;
     height: 50vh;
+    border-radius: 20px;
     margin-top: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(138, 137, 137, 0.19);
 }
 .overview p {
     font-size: 2.2vh;
@@ -261,4 +295,8 @@ input:focus{
     color: whitesmoke;
     padding: 5px;
     letter-spacing: 0.8px;
+}
+.overview{
+    width: 90%;
+    margin-bottom: 5px;
 }

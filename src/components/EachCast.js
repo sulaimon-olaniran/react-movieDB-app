@@ -1,10 +1,12 @@
 import React from 'react'
+import alterImage from './alterImage.jpg'
 
 
 function EachCast(props) {
     return (
         <div className="cast-detail">
-            <img src={`https://image.tmdb.org/t/p/w185${props.image}`} alt="img slides" />
+        { props.image === null ? <img src={alterImage} alt="Movie Poster" /> :
+        <img src={`https://image.tmdb.org/t/p/w342${props.image}`} alt="img slides" />}
             <div className="character">
                 <p id="name">{props.name}</p>
                 <p id="character">{props.character}</p>
