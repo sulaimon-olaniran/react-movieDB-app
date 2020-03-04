@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
 import Homepage from './components/homepage/Homepage';
-import NavBar from './components/NavBar';
+import NavBar from './components/Navbar/NavBar';
 import SearchContextProvider from './components/contexts/SearchContext';
 import PopularPage from './components/PopularPage/PopularPage';
 import UpcomngPage from './components/UpcomingPage/UpcomingPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import MovieDetails from './components/MovieDetails';
 import SearchPage from './components/SearchPage/SearchPage';
+import Footer from './components/Footer/Footer';
 
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
               <Route path="/upcoming" component={UpcomngPage} />
             </Switch>
           </main>
+          <footer>
+               <Footer/>
+          </footer>
         </div>
       </Router>
     </SearchContextProvider>

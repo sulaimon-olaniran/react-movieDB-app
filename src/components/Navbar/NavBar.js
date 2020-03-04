@@ -1,5 +1,5 @@
 import React from 'react'
-import './components.css'
+import './Navbar.css'
 import {Link} from 'react-router-dom'
 import pageLog from './pageLog.ico'
 
@@ -25,9 +25,6 @@ function NavBar () {
          </Link>
          <Link style={linkStyle} to="/upcoming" >
          <li>Upcoming</li>
-         </Link>
-         <Link style={linkStyle} to="/about">
-         <li>About</li>
          </Link>
        </ul>
        </nav>

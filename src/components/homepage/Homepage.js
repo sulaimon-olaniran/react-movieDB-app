@@ -1,5 +1,6 @@
 import React from 'react'
 import '../components.css'
+import './Homepage.css'
 import ImgSlider from './ImgSlider'
 
 
@@ -11,9 +12,6 @@ function Homepage() {
             <section className="home" >
                 <ImgSlider />
             </section>
-            <footer>
-                <h1>Footer</h1>
-            </footer>
         </div>
 
     )

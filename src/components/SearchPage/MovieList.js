@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { SearchContext } from '../contexts/SearchContext'
 import InfiniteScroll from "react-infinite-scroll-component";
-import Movie from './Movie'
+import Movie from '../homepage/Movie'
 
 const MovieList = () => {
     const { moviesList, fetchMoreData, backToSearch, totalMovies } = useContext(SearchContext)

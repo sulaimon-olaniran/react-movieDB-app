@@ -18,13 +18,13 @@ body{
 
 
 .main-container {
-  position: relative;
-  top: 10vh;
+  margin-top: 10vh;
   width: 100%;
   min-height: 90vh;
 }
 
 footer {
-  height: 10vh;
+  width: 100%;
+  min-height: 60vh;
   background-color: rgb(83, 82, 82);
 }

@@ -1,0 +1,18 @@
+.slider-container {
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide-img img{
+    width: 100%;
+    min-height: 90vh;
+
+}
+.img-slider {
+    min-width: 100%;
+    min-height: 90vh;
+    transition: 0.5s;
+}

@@ -20,20 +20,22 @@ function MovieDetails({ match }) {
         <div className="movie-details">
             <section className="details-section">
                 <div className="ratings">
-                    <h3>{movie.title}<br/> <span>({movie.release_date})</span></h3>
+                    <h3>{movie.title}<br /> <span>({movie.release_date})</span></h3>
                     <p>Rating : {movie.vote_average}</p>
                 </div>
                 <div className="details-img">
-                   { movie.poster_path === null ? <img src={alterImage} alt="Movie Poster" /> :
-                   <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Movie Poster" />}
+                    {movie.poster_path === null ? <img src={alterImage} alt="Movie Poster" /> :
+                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Movie Poster" />}
                 </div>
                 <div className="overview">
-                 <p>{movie.overview}</p>
+                    <p>{movie.overview}</p>
                 </div>
             </section>
+
             <h3>Movie's Casts</h3>
+
             <section className="cast-crew">
-                <CastCrews identity={match.params.id}/>
+                <CastCrews identity={match.params.id} />
             </section>
         </div>
     )

@@ -1,0 +1,103 @@
+.listed-movies {
+    min-height: 100vh;
+    width: 100%;
+}
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: wheat;
+    font-size: 3vh;
+}
+
+.back-btn {
+    display: flex;
+    width: 100%;
+    height: 8vh;
+    background-color:rgb(37, 33, 33);
+    align-items: center;
+    justify-content: center;
+    position: fixed ;
+}
+
+   
+.back-btn button {
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 1vh;
+    height: 5vh;
+    background-color: #f16051;
+    color: #fff;
+    border-radius: 10px;
+}
+.search-div {
+    display: flex;
+    background-color:  rgb(37, 33, 33);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 80vh;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.search-page {
+    height: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-gallary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    min-height: 90vh;
+    margin-top: 9vh;
+    width: 100%;
+}
+form button {
+    width: 20vh;
+    height: 5vh;
+    background-color:  rgb(68, 65, 65);
+    color: white;
+    font-size: 1rem;
+    border-style: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+input:focus{
+    outline: none;
+}
+
+:-ms-input-placeholder {
+    color: white;
+    
+}
+::-webkit-input-placeholder{
+    color: white;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form input {
+    text-transform: capitalize;
+    background: transparent;
+    border: none;
+    color: white;
+    border-bottom: solid 3px rgb(68, 65, 65);
+    width: 40vh;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 530;
+    letter-spacing: 1px;
+    padding-bottom:10px ;
+}
+
+
