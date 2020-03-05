@@ -5,14 +5,14 @@ import './Footer.css'
 function Footer() {
     return (
         <div className="footer-style">
-            <div className="about-div">
-                <h2>About</h2>
-                <p>Get details on your favourite movies, 
-                   Stay up to date with popular movies around
-                   the world and stay tuned with details of
-                   upcoming movies.
+                <div className="about-div">
+                    <h2>About</h2>
+                    <p>Get details on your favourite movies,
+                       Stay up to date with popular movies around
+                       the world and stay tuned with details of
+                       upcoming movies.
                 </p>
-            </div>
+                </div>
             <div className="social-media">
                 <a href="#" class="fa fa-facebook"></a>
                 <a href="#" class="fa fa-twitter"></a>

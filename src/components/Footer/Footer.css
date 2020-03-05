@@ -6,7 +6,6 @@
     align-items: center;
     justify-content: space-between;
 }
-
 .social-media {
     width: 90%;
     min-height: 12vh;
@@ -20,8 +19,9 @@
 
 .about-div{
     width: 90%;
+    margin-bottom: 10px;
     min-height: 20vh;
-    border: 3px solid lightpink;
+    
     border-top-color: palevioletred;
     border-radius: 20px;
     border-bottom-left-radius: 50px;
@@ -41,18 +41,20 @@
 
 .about-div p{
     padding: 10px;
+    font-size: 1.2rem;
     border-left: 2px solid burlywood;
     border-right: 2px solid burlywood;
+    border-radius: 15px;
 }
 
 .logo-div {
     width: 100%;
     min-height: 20vh;
-    background-color: lightgrey;
+    background-color: transparent; 
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 10px 30px 0 rgba(0, 0, 0, 0.19);
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 10px 30px 0 rgba(0, 0, 0, 0.19);*/
 }
 
 .logo-div img {

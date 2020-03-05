@@ -2,6 +2,7 @@ import React from 'react'
 import './Navbar.css'
 import {Link} from 'react-router-dom'
 import pageLog from './pageLog.ico'
+import logoPage from './logoPage.png'
 
 function NavBar () {
   const linkStyle = {
@@ -11,7 +12,7 @@ function NavBar () {
     return (
         <nav>
         <div className="logo">
-       <img src={pageLog} alt="Logo" />
+       <img src={logoPage} alt="Logo" />
        </div>
        <ul>
          <Link style={linkStyle} to="/">

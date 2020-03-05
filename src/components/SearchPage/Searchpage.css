@@ -33,11 +33,12 @@
 }
 .search-div {
     display: flex;
-    background-color:  rgb(37, 33, 33);
+    background-color:  white;
+    background-image: url("film-background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    min-height: 80vh;
+    min-height: 90vh;
     align-items: center;
     justify-content: center;
    
@@ -45,6 +46,7 @@
 
 .search-page {
     height: 100;
+    width: 100%;
     align-items: center;
     justify-content: center;
 }

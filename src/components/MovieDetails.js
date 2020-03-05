@@ -8,6 +8,7 @@ function MovieDetails({ match }) {
 
     useEffect(() => {
         fetchMovieDetail()
+        window.scrollTo(0, 0)
     }, [])
 
     const fetchMovieDetail = async () => {
