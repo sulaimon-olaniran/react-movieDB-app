@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react'
 import axios from 'axios'
+import { trackPromise } from 'react-promise-tracker'
 
 
 export const SearchContext = createContext()
@@ -12,6 +13,8 @@ const SearchContextProvider = (props) => {
     const [moviesList, setMoviesList] = useState([])
     const [pages, setPages] = useState(1)
     const [totalMovies, setTotalmovies] = useState(0)
+    const [loaded, setLoaded] = useState(false)
+    const [burgerLink, setBurgerLink] = useState(false)
 
     const handleChange = (e) => {
         setSearchField(e.target.value)
@@ -22,43 +25,53 @@ const SearchContextProvider = (props) => {
         setMoviesList([])
         setTotalmovies(0)
         setPages(1)
+        setLoaded(false)
     }
 
+    const handleBurger = () => {
+        setBurgerLink(!burgerLink)
+    }
+    const closeBurger = () => {
+        setBurgerLink(false)
+    }
+
+
     const handleSubmission = (e) => {
-        setPages(pages + 1) 
+        setPages(pages + 1)
         e.preventDefault()
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchField}`)
-        .then(res => {
-            setMoviesList(res.data.results)
-            setTotalmovies(res.data.total_results)
-            console.log(res.data)
-            console.log(res.data.total_results)
-           
-        })
-        .catch(err => {
-            console.log(err)
-        })
+        trackPromise(
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchField}`)
+                .then(res => {
+                    setMoviesList(res.data.results)
+                    setTotalmovies(res.data.total_results)
+                    setLoaded(true)
+                    console.log(res.data)
+                    console.log(res.data.total_results)
+
+                })
+                .catch(err => {
+                    console.log(err)
+                }))
     }
 
     const fetchMoreData = () => {
-        setPages(pages + 1) 
+        setPages(pages + 1)
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchField}&page=${pages}`)
             .then(res => {
                 setMoviesList(moviesList.concat(res.data.results))
-               
+
             })
             .catch(err => {
-                console.log(err)
-            }) 
+                //console.log("hello" + err)
+            })
 
     }
-
-
 
     return (
         <SearchContext.Provider value={{
             searchField, moviesList, totalMovies, handleSubmission: handleSubmission,
-            handleChange: handleChange, fetchMoreData: fetchMoreData, backToSearch : backToSearch
+            loaded, handleBurger: handleBurger, handleChange: handleChange,burgerLink,
+            fetchMoreData: fetchMoreData, backToSearch: backToSearch, closeBurger:closeBurger
         }}>
             {props.children}
         </SearchContext.Provider>

@@ -2,6 +2,7 @@ nav {
     display: flex;
     background-color: white;
     justify-content: center;
+    align-items: center;
     width: 100%;
     color: gray;
 }
@@ -28,6 +29,15 @@ nav ul {
 }
 
 nav ul li {
-   padding-right: 5px;
+   padding-right: 0px;
    color: gray;
+}
+
+@media(max-width : 768px){
+  .ul-nav {
+      display: none;
+  }
+  nav {
+      justify-content: space-between;
+  }
 }

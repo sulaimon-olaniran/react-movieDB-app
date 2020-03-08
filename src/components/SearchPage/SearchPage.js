@@ -4,8 +4,9 @@ import SearchMovies from './SearchMovies'
 import MovieList from './MovieList'
 import './Searchpage.css'
 
+
 function SearchPage(){
-  const {moviesList} = useContext(SearchContext)
+  const {loaded, totalMovies} = useContext(SearchContext)
   useEffect(()=>{
     window.scrollTo(0, 0)
   }, [])
@@ -13,7 +14,7 @@ function SearchPage(){
     return (
         <section className="search-page" >
            {
-                  moviesList.length < 1 ? <SearchMovies /> : <MovieList />}
+                  totalMovies === 0 & loaded === false ? <SearchMovies /> : <MovieList />}
         </section>
     )
 }

@@ -1,0 +1,30 @@
+.pagination {
+    list-style-type: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: transparent;
+   padding: 0;
+   margin-bottom: 20px;
+}
+
+.pagination a {
+    display: flex;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    color: lightgrey;
+    text-decoration: none;
+    border: 1px solid darkslategrey;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+}
+.active{
+    background-color: rgb(80, 80, 80);
+
+}
+
+.popular-container{
+    margin-top: 12vh;
+}

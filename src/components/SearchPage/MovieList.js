@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { SearchContext } from '../contexts/SearchContext'
 import InfiniteScroll from "react-infinite-scroll-component";
 import Movie from '../homepage/Movie'
+import MovieNotFound from './MovieNotFound';
 
 const MovieList = () => {
     const { moviesList, fetchMoreData, backToSearch, totalMovies } = useContext(SearchContext)
@@ -21,22 +22,22 @@ const MovieList = () => {
                     <button onClick={backToSearch}>Back to Search</button>
                 </div>
 
+                { totalMovies === 0 ? <div className="img-gallary"> <MovieNotFound/> </div> :
+                
+                    <div className="img-gallary">
 
-
-                <div className="img-gallary">
-
-                    {
-                        moviesList.map((movie, i) => {
-                            return (
-                                <Movie key={movie.id}
-                                    image={movie.poster_path}
-                                    title={movie.title}
-                                    id={movie.id}
-                                />
-                            )
-                        })
-                    }
-                </div>
+                        {
+                            moviesList.map((movie, i) => {
+                                return (
+                                    <Movie key={movie.id}
+                                        image={movie.poster_path}
+                                        title={movie.title}
+                                        id={movie.id}
+                                    />
+                                )
+                            })
+                        }
+                    </div>}
 
             </InfiniteScroll>
         </div>

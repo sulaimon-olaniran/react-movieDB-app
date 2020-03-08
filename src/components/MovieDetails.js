@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import CastCrews from './CastCrews'
 import alterImage from './alterImage.jpg'
+import { trackPromise } from 'react-promise-tracker'
+import { DotLoader } from "react-spinners"
+import { usePromiseTracker } from "react-promise-tracker"
 
 
 function MovieDetails({ match }) {
     const [movie, setMovie] = useState([])
-
+    const { promiseInProgress } = usePromiseTracker()
     useEffect(() => {
-        fetchMovieDetail()
+        trackPromise(
+            fetchMovieDetail()
+        )
         window.scrollTo(0, 0)
     }, [])
 
@@ -19,14 +24,24 @@ function MovieDetails({ match }) {
     }
     return (
         <div className="movie-details">
+
             <section className="details-section">
                 <div className="ratings">
                     <h3>{movie.title}<br /> <span>({movie.release_date})</span></h3>
                     <p>Rating : {movie.vote_average}</p>
                 </div>
                 <div className="details-img">
-                    {movie.poster_path === null ? <img src={alterImage} alt="Movie Poster" /> :
-                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Movie Poster" />}
+                    {
+                        promiseInProgress ?
+
+                            <DotLoader
+                                size={150}
+                                color={"lightgray"}
+
+                            /> :
+
+                            movie.poster_path === null ? <img src={alterImage} alt="Movie Poster" /> :
+                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Movie Poster" />}
                 </div>
                 <div className="overview">
                     <p>{movie.overview}</p>

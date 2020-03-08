@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import MovieDetails from './components/MovieDetails';
 import SearchPage from './components/SearchPage/SearchPage';
 import Footer from './components/Footer/Footer';
+import Menu from './Menu';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
     <SearchContextProvider>
       <Router>
         <div className="App">
+          <Menu/>
           <nav className="navigation">
             <NavBar />
           </nav>
