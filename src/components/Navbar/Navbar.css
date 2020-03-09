@@ -1,15 +1,17 @@
-nav {
+.nav-bar {
     display: flex;
     background-color: white;
     justify-content: center;
     align-items: center;
     width: 100%;
     color: gray;
+    height: 100%;
 }
 .logo{
   display: flex;
   width: 30%;
   height: 100%;
+  margin-left: 10px;
   justify-content: space-around;
   align-items: center;
  
@@ -20,7 +22,7 @@ nav {
 }
 
 
-nav ul {
+.nav-bar ul {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -28,16 +30,16 @@ nav ul {
     width: 70%;
 }
 
-nav ul li {
+.nav-bar ul li {
    padding-right: 0px;
    color: gray;
 }
 
 @media(max-width : 768px){
-  .ul-nav {
+  .nav-bar ul {
       display: none;
   }
-  nav {
+  .nav-bar {
       justify-content: space-between;
   }
 }

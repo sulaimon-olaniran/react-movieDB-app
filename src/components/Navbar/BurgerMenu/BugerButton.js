@@ -3,10 +3,7 @@ import './Burger.css'
 import { SearchContext } from '../../contexts/SearchContext'
 
 function BurgerButton (){
-    const {handleBurger, burgerLink} = useContext(SearchContext)
-    const check = () =>{
-        alert(burgerLink)
-    }
+    const {handleBurger} = useContext(SearchContext)
 
    return(
        <button className="burger-button" onClick={handleBurger}>

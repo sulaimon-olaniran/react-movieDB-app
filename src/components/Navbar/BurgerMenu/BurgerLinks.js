@@ -17,21 +17,25 @@ function BurgerLinks() {
     }
     return (
         <nav className={burgerClass}>
-            <button onClick={closeBurger}>Close</button>
-            <ul className="burger-ul">
-                <Link style={linkStyle} to="/">
-                    <li>Home</li>
-                </Link>
-                <Link style={linkStyle} to="/search">
-                    <li >Search</li>
-                </Link>
-                <Link style={linkStyle} to="/popular" >
-                    <li>Popular</li>
-                </Link>
-                <Link style={linkStyle} to="/upcoming" >
-                    <li>Upcoming</li>
-                </Link>
-            </ul>
+            <div className="close-burger-div">
+                <button onClick={closeBurger}>X</button>
+            </div>
+            <div>
+                <ul className="burger-ul">
+                    <Link style={linkStyle} to="/" onClick={closeBurger}>
+                        <li>Home</li>
+                    </Link>
+                    <Link style={linkStyle} to="/search" onClick={closeBurger}>
+                        <li >Search</li>
+                    </Link>
+                    <Link style={linkStyle} to="/popular" onClick={closeBurger}>
+                        <li>Popular</li>
+                    </Link>
+                    <Link style={linkStyle} to="/upcoming" onClick={closeBurger} >
+                        <li>Upcoming</li>
+                    </Link>
+                </ul>
+            </div>
         </nav>
     )
 

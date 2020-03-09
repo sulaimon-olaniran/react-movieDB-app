@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 import logoPage from './logoPage.png'
 import BurgerButton from './BurgerMenu/BugerButton'
+import { SearchContext } from '../contexts/SearchContext'
 
 function NavBar() {
+  const { closeBurger } = useContext(SearchContext)
   const linkStyle = {
     color: 'white'
   }
 
   return (
-    <nav>
+    <nav className="nav-bar">
       <div className="logo">
-        <img src={logoPage} alt="Logo" />
+        <Link style={linkStyle} to="/" onClick={closeBurger}>
+          <img src={logoPage} alt="Logo" />
+        </Link>
       </div>
       <ul className="ul-nav">
         <Link style={linkStyle} to="/">
