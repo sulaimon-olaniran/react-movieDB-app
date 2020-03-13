@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { SearchContext } from '../contexts/SearchContext'
-import InfiniteScroll from "react-infinite-scroll-component";
+import InfiniteScroll from "react-infinite-scroll-component"
 import Movie from '../homepage/Movie'
-import MovieNotFound from './MovieNotFound';
+import MovieNotFound from './MovieNotFound'
 
 const MovieList = () => {
     const { moviesList, fetchMoreData, backToSearch, totalMovies } = useContext(SearchContext)
@@ -15,8 +15,8 @@ const MovieList = () => {
                 hasMore={
                     totalMovies > moviesList.length ? true : false
                 }
-                loader={<div className="loader"><p>Loading...</p></div>}
 
+                loader={<div className="loader"><p>Loading...</p></div>}
             >
                 <div className="back-btn">
                     <button onClick={backToSearch}>Back to Search</button>
@@ -27,12 +27,13 @@ const MovieList = () => {
                     <div className="img-gallary">
 
                         {
-                            moviesList.map((movie, i) => {
+                            moviesList.map((movie) => {
                                 return (
                                     <Movie key={movie.id}
                                         image={movie.poster_path}
                                         title={movie.title}
                                         id={movie.id}
+                                        page={"search"}
                                     />
                                 )
                             })
@@ -41,9 +42,7 @@ const MovieList = () => {
 
             </InfiniteScroll>
         </div>
-
     )
-
 }
 
 export default MovieList

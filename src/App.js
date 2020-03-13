@@ -17,21 +17,22 @@ function App() {
     <SearchContextProvider>
       <Router>
         <div className="App">
-          <Menu/>
+          <Menu />
           <nav className="navigation">
             <NavBar />
           </nav>
           <main className="main-container">
             <Switch>
               <Route path="/" exact component={Homepage} />
-              <Route path="/search" exact component={SearchPage}/>
-              <Route path="/search/:id" component={MovieDetails} />
-              <Route path="/popular" component={PopularPage} />
+              <Route path="/search" exact component={SearchPage} />
+              <Route path="/search/id/:id" component={MovieDetails} />
+            <Route path="/popular" exact component={PopularPage} /> 
+              <Route path="/popular/id/:id" exact component={MovieDetails} />
               <Route path="/upcoming" component={UpcomngPage} />
             </Switch>
           </main>
           <footer>
-               <Footer/>
+            <Footer />
           </footer>
         </div>
       </Router>
@@ -49,7 +50,7 @@ export default App;
 
 
 /*
-//557 as movie id 
+//557 as movie id
 https://api.themoviedb.org/3/movie/557?api_key=644c44d2acac97a0ba2dba1edacf5a00
 
 

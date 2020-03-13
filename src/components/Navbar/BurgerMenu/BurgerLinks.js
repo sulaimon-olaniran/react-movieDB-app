@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './Burger.css'
 import { SearchContext } from '../../contexts/SearchContext'
 
@@ -22,18 +22,18 @@ function BurgerLinks() {
             </div>
             <div>
                 <ul className="burger-ul">
-                    <Link style={linkStyle} to="/" onClick={closeBurger}>
+                    <NavLink style={linkStyle} to="/" onClick={closeBurger} activeClassName='is-active' >
                         <li>Home</li>
-                    </Link>
-                    <Link style={linkStyle} to="/search" onClick={closeBurger}>
+                    </NavLink>
+                    <NavLink style={linkStyle} to="/search" onClick={closeBurger} activeClassName='is-active' >
                         <li >Search</li>
-                    </Link>
-                    <Link style={linkStyle} to="/popular" onClick={closeBurger}>
+                    </NavLink>
+                    <NavLink style={linkStyle} to="/popular" onClick={closeBurger} activeClassName='is-active' >
                         <li>Popular</li>
-                    </Link>
-                    <Link style={linkStyle} to="/upcoming" onClick={closeBurger} >
+                    </NavLink>
+                    <NavLink style={linkStyle} to="/upcoming" onClick={closeBurger} activeClassName='is-active'  >
                         <li>Upcoming</li>
-                    </Link>
+                    </NavLink>
                 </ul>
             </div>
         </nav>

@@ -5,7 +5,7 @@ import alterImage from '../alterImage.jpg'
 const Movie = (props) => {
     
     return (
-        <Link className="movie-poster" to={`/search/${props.id}`}>
+        <Link className="movie-poster" to={`/${props.page}/id/${props.id}`}>
 
             {
                 props.image === null ? <img src={alterImage} alt="Movie Poster" />

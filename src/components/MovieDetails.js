@@ -13,6 +13,7 @@ function MovieDetails({ match }) {
         trackPromise(
             fetchMovieDetail()
         )
+        console.log(match)
         window.scrollTo(0, 0)
     }, [])
 
@@ -24,8 +25,8 @@ function MovieDetails({ match }) {
     }
     return (
         <div className="movie-details">
-
             <section className="details-section">
+                <button>handle click</button>
                 <div className="ratings">
                     <h3>{movie.title}<br /> <span>({movie.release_date})</span></h3>
                     <p>Rating : {movie.vote_average}</p>

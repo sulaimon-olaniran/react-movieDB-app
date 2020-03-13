@@ -25,7 +25,7 @@ function NavBar() {
         <Link style={linkStyle} to="/search">
           <li >Search</li>
         </Link>
-        <Link style={linkStyle} to="/popular" >
+        <Link style={linkStyle} to={`/popular`} >
           <li>Popular</li>
         </Link>
         <Link style={linkStyle} to="/upcoming" >

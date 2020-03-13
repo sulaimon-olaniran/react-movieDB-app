@@ -14,10 +14,10 @@ function Footer() {
                 </p>
                 </div>
             <div className="social-media">
-                <a href="#" className="fa fa-facebook"></a>
-                <a href="#" className="fa fa-twitter"></a>
-                <a href="#" className="fa fa-google"></a>
-                <a href="#" className="fa fa-instagram"></a>
+                <a href="https://web.facebook.com" className="fa fa-facebook"></a>
+                <a href="https://twitter.com/Olami_dipupo" className="fa fa-twitter"></a>
+                <a href="google.com" className="fa fa-google"></a>
+                <a href="instagram.com" className="fa fa-instagram"></a>
             </div>
             <div className="logo-div">
                 <img src={footerLogo} alt="Powered by TMDB" />
