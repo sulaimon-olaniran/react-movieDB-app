@@ -1,34 +1,26 @@
 import React, { useContext, useEffect } from 'react'
-import '../components.css'
+import './Searchpage.css'
 import { SearchContext } from '../contexts/SearchContext'
-import { usePromiseTracker } from "react-promise-tracker"
-import { DotLoader } from "react-spinners"
+import { Link } from 'react-router-dom'
 
 
 const SearchMovies = () => {
-  const { handleSubmission, handleChange } = useContext(SearchContext)
-  const { promiseInProgress } = usePromiseTracker()
-
+  const { handleChange, searchField } = useContext(SearchContext)
+ 
   return (
+    <div className="search-page">
     <div className="search-div">
-      {promiseInProgress ?
-
-        <DotLoader
-          size={150}
-          color={"lightgray"}
-
-        />
-        :
-        <section className="form-section">
-          <form >
-            <input type="text" placeholder="Search For Movie...."
-              onChange={handleChange}
-            />
-            <button onClick={handleSubmission} >Search</button>
-
-          </form>
-        </section>
-      }
+      <section className="form-section">
+        <form >
+          <input type="text" placeholder="Search For Movie...."
+            onChange={handleChange}
+          />
+          <Link to={`/search/${searchField}`}>
+            <button  className="form-button">Search</button>
+          </Link>
+        </form>
+      </section>
+    </div>
     </div>
   )
 }

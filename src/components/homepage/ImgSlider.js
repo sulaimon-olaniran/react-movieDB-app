@@ -4,7 +4,8 @@ import SlideImage from './SlideImg'
 
 function ImgSlider(){
    useEffect(() =>{
-    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=644c44d2acac97a0ba2dba1edacf5a00`)
+    const page = Math.floor(Math.random() * 10) + 1;
+    axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=644c44d2acac97a0ba2dba1edacf5a00&page=${page}`)
     .then(res => {
         setImages(res.data.results)
         console.log(res.data.results)

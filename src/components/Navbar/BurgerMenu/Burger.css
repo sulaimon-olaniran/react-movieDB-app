@@ -1,5 +1,5 @@
 .burger {
-    width: 45px;
+    width: 40px;
     height: 3px;
     background-color: rgb(114, 114, 114);
 }
@@ -10,7 +10,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    height: 35px;
+    height: 30px;
     width: 40px;
     background: transparent;
     border: none;

@@ -15,7 +15,7 @@ function NavBar() {
     <nav className="nav-bar">
       <div className="logo">
         <Link style={linkStyle} to="/" onClick={closeBurger}>
-          <img src={logoPage} alt="Logo" />
+          <img src={logoPage} alt="Logo" className="logo-image"/>
         </Link>
       </div>
       <ul className="ul-nav">

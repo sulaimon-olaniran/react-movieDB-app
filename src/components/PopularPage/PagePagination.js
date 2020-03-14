@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
+import './PopularPage.css'
 
 
 
@@ -8,15 +9,13 @@ function PagePagination({nextPage, activePage, pages, page}) {
 
     for (let i = 1; i <= pages ; i++){
        // let active = activePage === i ? "active" : ""
-        pageLinks.push(<li className={'page-links'} key={i}>{i}</li>)
+        pageLinks.push(<Link className={'page-links'} key={i} to={`/popular/${i}`}>{i}</Link>)
     }
 
     return (
         <div>
-           <ul>
-               <Link to={`/popular/${5}`}>
+           <ul className={"pageination-links"}>
                {pageLinks}
-               </Link>
            </ul>
         </div>
     )

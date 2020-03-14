@@ -7,7 +7,7 @@
   position: fixed;
   top: 0px;
   overflow: hidden;
-  height: 10vh;
+  height: 8vh;
   width: 100%;
   box-shadow: 0 8px 6px -6px #333;
   z-index: 9999;
@@ -18,7 +18,7 @@ body{
 
 
 .main-container {
-  margin-top: 10vh;
+  margin-top: 8vh;
   width: 100%;
   min-height: 90vh;
 }

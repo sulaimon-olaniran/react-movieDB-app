@@ -26,5 +26,19 @@
 }
 
 .popular-container{
-    margin-top: 12vh;
+    margin-top: 8vh;
+    overflow: hidden;
+}
+
+.pagination-links {
+    text-decoration: none;
+    color: lightgray;
+}
+
+.page-links {
+    color: lightgray;
+    text-decoration: none;
+    overflow : hidden;
+    font-size: 1.2rem;
+    padding: 5px;
 }

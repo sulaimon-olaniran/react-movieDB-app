@@ -5,19 +5,22 @@ import Pagination from "react-js-pagination"
 import './PopularPage.css'
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
 import { DotLoader } from "react-spinners"
+import { Link } from 'react-router-dom'
+import PagePagination from './PagePagination'
 
 
 
 
-function PopularPage() {
+function PopularPage( {match}) {
     const { promiseInProgress } = usePromiseTracker()
     const [movies, setMovies] = useState([])
     const [activePage, setActivePage] = useState(1)
     const [allMovies, setAllmovies] = useState(0)
 
     useEffect(() => {
+        console.log(match)
         trackPromise(
-            axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=644c44d2acac97a0ba2dba1edacf5a00&page=${activePage}`)
+            axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=644c44d2acac97a0ba2dba1edacf5a00&page=${match.params.page}`)
                 .then(res => {
                     console.log(res.data.results)
                     setMovies(res.data.results)
@@ -26,17 +29,15 @@ function PopularPage() {
                 .catch(err => {
                     console.log(err)
                 }))
-    }, [activePage])
+    }, [match.params.page])
+
     
+     const numOfPages = Math.floor(allMovies/20)
 
-    useEffect(() =>{
-        window.scrollTo(0, 0)
-    }, [promiseInProgress])
-
-
+/*
     const getMorePages = (pageNumber) => {
         setActivePage(pageNumber)
-    }
+    }*/
 
     return (
         <div className="popular-container">
@@ -57,8 +58,17 @@ function PopularPage() {
                             })
                         }
                     </div>}
+              
+              <PagePagination
+                pages = {numOfPages}
+                activePage ={activePage}
+              />
 
-            <Pagination
+
+
+           { 
+            /*
+           <Pagination
                 activePage={activePage}
                 itemsCountPerPage={20}
                 totalItemsCount={allMovies}
@@ -66,6 +76,8 @@ function PopularPage() {
                 onChange={getMorePages}
                 activeLinkClass="active-link"
             />
+            */
+            }
 
 
         </div>
