@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import CastCrews from './CastCrews'
-import alterImage from './alterImage.jpg'
+import alterImage from '../alterImage.jpg'
 import { trackPromise } from 'react-promise-tracker'
 import { DotLoader } from "react-spinners"
 import { usePromiseTracker } from "react-promise-tracker"

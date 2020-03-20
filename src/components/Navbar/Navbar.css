@@ -34,7 +34,7 @@
    padding-right: 0px;
    color: gray;
 }
-
+/* hiding nav links for screen size of width*/
 @media(max-width : 768px){
   .nav-bar ul {
       display: none;
@@ -42,4 +42,14 @@
   .nav-bar {
       justify-content: space-between;
   }
+}
+
+
+
+@media(min-width : 768px){
+    
+.logo-image {
+    height: 70px;
+}
+
 }

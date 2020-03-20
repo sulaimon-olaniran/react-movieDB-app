@@ -1,20 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Movie from '../homepage/Movie'
+import Movie from '../ReUsable/Movie'
 import Pagination from "react-js-pagination"
 import './PopularPage.css'
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
 import { DotLoader } from "react-spinners"
-import { Link } from 'react-router-dom'
 import PagePagination from './PagePagination'
-
-
 
 
 function PopularPage( {match}) {
     const { promiseInProgress } = usePromiseTracker()
     const [movies, setMovies] = useState([])
-    const [activePage, setActivePage] = useState(1)
+    const [activePage, setActivePage] = useState(match.params.page)
     const [allMovies, setAllmovies] = useState(0)
 
     useEffect(() => {
@@ -25,6 +22,7 @@ function PopularPage( {match}) {
                     console.log(res.data.results)
                     setMovies(res.data.results)
                     setAllmovies(res.data.total_results)
+                   
                 })
                 .catch(err => {
                     console.log(err)
@@ -33,11 +31,6 @@ function PopularPage( {match}) {
 
     
      const numOfPages = Math.floor(allMovies/20)
-
-/*
-    const getMorePages = (pageNumber) => {
-        setActivePage(pageNumber)
-    }*/
 
     return (
         <div className="popular-container">
@@ -61,13 +54,12 @@ function PopularPage( {match}) {
               
               <PagePagination
                 pages = {numOfPages}
-                activePage ={activePage}
+                activePage = {activePage}
               />
 
 
-
            { 
-            /*
+          /*
            <Pagination
                 activePage={activePage}
                 itemsCountPerPage={20}

@@ -6,12 +6,11 @@ import SearchContextProvider from './components/contexts/SearchContext';
 import PopularPage from './components/PopularPage/PopularPage';
 import UpcomngPage from './components/UpcomingPage/UpcomingPage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import MovieDetails from './components/MovieDetails';
+import MovieDetails from './components/ReUsable/MovieDetails';
 import Footer from './components/Footer/Footer';
 import Menu from './Menu';
 import SearchMovies from './components/SearchPage/SearchMovies';
 import MovieList from './components/SearchPage/MovieList';
-import PagesOfPopular from './components/PopularPage/PagesOfPopular';
 
 
 function App() {
@@ -29,8 +28,7 @@ function App() {
               <Route path="/search" exact component={SearchMovies} />
               <Route exact path="/search/:movie" component={MovieList} />
               <Route path="/search/id/:id" component={MovieDetails} />
-              <Route exact path="/popular"  component={PopularPage} /> 
-              <Route exact path="/popular/:page" component={PopularPage} />
+              <Route exact path="/popular/:page"  component={PopularPage} /> 
               <Route path="/popular/id/:id" exact component={MovieDetails} />
               <Route path="/upcoming" component={UpcomngPage} />
             </Switch>

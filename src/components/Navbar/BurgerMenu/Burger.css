@@ -82,3 +82,13 @@
     padding: 0px 5px;
     margin: 10px 0 0 10px;
 }
+.is-active {
+    background: none;
+    border: none;
+    border-bottom: 2px solid salmon;
+}
+
+
+@media(min-width : 768px){
+    
+}

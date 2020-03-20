@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Searchpage.css'
 import InfiniteScroll from "react-infinite-scroll-component"
-import Movie from '../homepage/Movie'
+import Movie from '../ReUsable/Movie'
 import MovieNotFound from './MovieNotFound'
 import axios from 'axios'
 import { trackPromise } from 'react-promise-tracker'

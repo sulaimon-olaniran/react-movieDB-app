@@ -151,3 +151,11 @@
     width: 90%;
     margin-bottom: 5px;
 }
+
+
+@media(min-width : 768px){
+
+    .movie-poster{
+        width: 30%;
+    }
+}

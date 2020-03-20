@@ -1,5 +1,5 @@
 import React from 'react'
-import alterImage from './alterImage.jpg'
+import alterImage from '../alterImage.jpg'
 
 
 function EachCast(props) {

@@ -87,3 +87,8 @@ form input {
 .no-movie {
     color: lightgray;
 }
+
+
+@media(min-width : 768px){
+    
+}

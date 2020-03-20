@@ -3,6 +3,10 @@ import axios from 'axios'
 import SlideImage from './SlideImg'
 
 function ImgSlider(){
+    
+   const [images, setImages] = useState([])
+   const [x, setX] = useState(0)
+
    useEffect(() =>{
     const page = Math.floor(Math.random() * 10) + 1;
     axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=644c44d2acac97a0ba2dba1edacf5a00&page=${page}`)
@@ -14,9 +18,6 @@ function ImgSlider(){
         console.log(err)
     })
    }, [])
-   const [images, setImages] = useState([])
-   const [x, setX] = useState(0)
-
    useEffect(() => {
     const interval = setInterval(() => {
       x === -100 * (images.length - 1) ? setX(0) :  setX(x - 100);

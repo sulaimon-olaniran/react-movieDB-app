@@ -22,13 +22,13 @@ function BurgerLinks() {
             </div>
             <div>
                 <ul className="burger-ul">
-                    <NavLink style={linkStyle} to="/" onClick={closeBurger} activeClassName='is-active' >
+                    <NavLink style={linkStyle} exact to="/" onClick={closeBurger} activeClassName='is-active' >
                         <li>Home</li>
                     </NavLink>
                     <NavLink style={linkStyle} to="/search" onClick={closeBurger} activeClassName='is-active' >
                         <li >Search</li>
                     </NavLink>
-                    <NavLink style={linkStyle} to="/popular" onClick={closeBurger} activeClassName='is-active' >
+                    <NavLink style={linkStyle} to={`/popular/${1}`} onClick={closeBurger} activeClassName='is-active' >
                         <li>Popular</li>
                     </NavLink>
                     <NavLink style={linkStyle} to="/upcoming" onClick={closeBurger} activeClassName='is-active'  >
