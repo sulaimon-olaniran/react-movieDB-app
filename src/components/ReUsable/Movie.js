@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import alterImage from '../alterImage.jpg'
+import './ReUsable.css'
 
 const Movie = (props) => {
     

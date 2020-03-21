@@ -7,8 +7,11 @@ import axios from 'axios'
 import { trackPromise } from 'react-promise-tracker'
 import { usePromiseTracker } from "react-promise-tracker"
 import { DotLoader, BeatLoader } from "react-spinners"
+import CustomScroll from 'react-custom-scroll'
+import './customScroll.css'
 
-const MovieList = ({ match }) => {
+
+const SearchMovieList = ({ match }) => {
     const { promiseInProgress } = usePromiseTracker()
     const apiKey = "644c44d2acac97a0ba2dba1edacf5a00"
     const [moviesList, setMoviesList] = useState([])
@@ -38,7 +41,9 @@ const MovieList = ({ match }) => {
     }
 
     return (
+        <CustomScroll>
         <div className="listed-movies">
+         
             <InfiniteScroll
                 dataLength={moviesList.length}
                 next={fetchMoreData}
@@ -56,8 +61,9 @@ const MovieList = ({ match }) => {
                     : loading && totalMovies === 0 ?
                     <div className="img-gallary"> <MovieNotFound/></div>
                     :
+                   
                     <div className="img-gallary">
-
+                        
                         {
                             moviesList.map((movie) => {
                                 return (
@@ -70,11 +76,16 @@ const MovieList = ({ match }) => {
                                 )
                             })
                         }
-                    </div>}
+                        
+                    </div>
+    
+                    }
 
             </InfiniteScroll>
+            
         </div>
+        </CustomScroll>
     )
 }
 
-export default MovieList
+export default SearchMovieList

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
-import './PopularPage.css'
+import './ReUsable.css'
 
 
 function PagePagination({ pages, activePage }) {

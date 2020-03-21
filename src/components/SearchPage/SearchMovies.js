@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 
 const SearchMovies = () => {
   const { handleChange, searchField } = useContext(SearchContext)
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  }, [])
  
   return (
     <div className="search-page">

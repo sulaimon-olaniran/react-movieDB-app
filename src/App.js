@@ -10,13 +10,13 @@ import MovieDetails from './components/ReUsable/MovieDetails';
 import Footer from './components/Footer/Footer';
 import Menu from './Menu';
 import SearchMovies from './components/SearchPage/SearchMovies';
-import MovieList from './components/SearchPage/MovieList';
+import SearchMovieList from './components/SearchPage/SearchMovieList';
 
 
 function App() {
   return (
     <SearchContextProvider>
-      <Router>
+      
         <div className="App">
           <Menu />
           <nav className="navigation">
@@ -26,7 +26,7 @@ function App() {
             <Switch>
               <Route path="/" exact component={Homepage} />
               <Route path="/search" exact component={SearchMovies} />
-              <Route exact path="/search/:movie" component={MovieList} />
+              <Route exact path="/search/:movie" component={SearchMovieList} />
               <Route path="/search/id/:id" component={MovieDetails} />
               <Route exact path="/popular/:page"  component={PopularPage} /> 
               <Route path="/popular/id/:id" exact component={MovieDetails} />
@@ -37,7 +37,7 @@ function App() {
             <Footer />
           </footer>
         </div>
-      </Router>
+      
     </SearchContextProvider>
   );
 }

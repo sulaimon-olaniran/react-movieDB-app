@@ -5,7 +5,7 @@ import Pagination from "react-js-pagination"
 import './PopularPage.css'
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
 import { DotLoader } from "react-spinners"
-import PagePagination from './PagePagination'
+import PagePagination from '../ReUsable/PagePagination'
 
 
 function PopularPage( {match}) {
@@ -13,9 +13,26 @@ function PopularPage( {match}) {
     const [movies, setMovies] = useState([])
     const [activePage, setActivePage] = useState(match.params.page)
     const [allMovies, setAllmovies] = useState(0)
+    const [scrollPosition, setSrollPosition] = useState(0);
+
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        setSrollPosition(position);
+    }
 
     useEffect(() => {
-        console.log(match)
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    useEffect(()=>{
+        console.log(scrollPosition)
+    }, [scrollPosition])
+
+    useEffect(() => {
+        window.scrollTo(0, 2972)
         trackPromise(
             axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=644c44d2acac97a0ba2dba1edacf5a00&page=${match.params.page}`)
                 .then(res => {
@@ -33,9 +50,16 @@ function PopularPage( {match}) {
      const numOfPages = Math.floor(allMovies/20)
 
     return (
-        <div className="popular-container">
-            {
-              
+       <div className="popular-container">
+
+             { promiseInProgress ?
+                    <div className="img-gallary">
+                        <DotLoader
+                            size={150}
+                            color={"lightgray"}
+                        />
+                  </div>
+              :
                     <div className="img-gallary">
 
                         {
@@ -51,26 +75,14 @@ function PopularPage( {match}) {
                             })
                         }
                     </div>}
-              
+              <div>
               <PagePagination
                 pages = {numOfPages}
                 activePage = {activePage}
               />
+             </div>
 
-
-           { 
-          /*
-           <Pagination
-                activePage={activePage}
-                itemsCountPerPage={20}
-                totalItemsCount={allMovies}
-                pageRangeDisplayed={5}
-                onChange={getMorePages}
-                activeLinkClass="active-link"
-            />
-            */
-            }
-
+          
 
         </div>
     )
