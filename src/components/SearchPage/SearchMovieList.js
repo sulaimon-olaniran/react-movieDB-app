@@ -7,8 +7,7 @@ import axios from 'axios'
 import { trackPromise } from 'react-promise-tracker'
 import { usePromiseTracker } from "react-promise-tracker"
 import { DotLoader, BeatLoader } from "react-spinners"
-import CustomScroll from 'react-custom-scroll'
-import './customScroll.css'
+
 
 
 const SearchMovieList = ({ match }) => {
@@ -41,7 +40,6 @@ const SearchMovieList = ({ match }) => {
     }
 
     return (
-        <CustomScroll>
         <div className="listed-movies">
          
             <InfiniteScroll
@@ -84,7 +82,6 @@ const SearchMovieList = ({ match }) => {
             </InfiniteScroll>
             
         </div>
-        </CustomScroll>
     )
 }
 

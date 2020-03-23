@@ -30,7 +30,8 @@ function App() {
               <Route path="/search/id/:id" component={MovieDetails} />
               <Route exact path="/popular/:page"  component={PopularPage} /> 
               <Route path="/popular/id/:id" exact component={MovieDetails} />
-              <Route path="/upcoming" component={UpcomngPage} />
+              <Route exact path="/upcoming/:page" component={UpcomngPage} />
+              <Route path="/upcoming/id/:id" component={MovieDetails} />
             </Switch>
           </main>
           <footer>
@@ -61,5 +62,6 @@ https://api.themoviedb.org/3/search/person?api_key=###&query=Brad+Pitt
 https://api.themoviedb.org/3/search/person?api_key=#####&language=en-US&query=Chris&page=1&include_adult=false
 https://api.themoviedb.org/3/discover/movie?api_key=644c44d2acac97a0ba2dba1edacf5a00&region=US&sort_by=popularity.desc&release_date.gte=2019-10-30&release_date.lte=2020-01-28&with_release_type=4
 https://api.themoviedb.org/3/movie/19940/credits?api_key=644c44d2acac97a0ba2dba1edacf5a00
+https://api.themoviedb.org/3/movie/upcoming?api_key=644c44d2acac97a0ba2dba1edacf5a00&region=us
 
 */

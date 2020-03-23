@@ -31,7 +31,7 @@ function BurgerLinks() {
                     <NavLink style={linkStyle} to={`/popular/${1}`} onClick={closeBurger} activeClassName='is-active' >
                         <li>Popular</li>
                     </NavLink>
-                    <NavLink style={linkStyle} to="/upcoming" onClick={closeBurger} activeClassName='is-active'  >
+                    <NavLink style={linkStyle} to={`/upcoming/${1}`} onClick={closeBurger} activeClassName='is-active'  >
                         <li>Upcoming</li>
                     </NavLink>
                 </ul>

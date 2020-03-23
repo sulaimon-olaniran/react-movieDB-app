@@ -17,6 +17,7 @@
     "react-masonry-component": "^6.2.1",
     "react-promise-tracker": "^2.1.0",
     "react-router-dom": "^5.1.2",
+    "react-router-scroll-4": "^1.0.0-beta.2",
     "react-router-scroll-memory": "^2.0.5",
     "react-scripts": "3.4.0",
     "react-spinners": "^0.8.0"

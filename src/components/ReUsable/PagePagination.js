@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import './ReUsable.css'
 
 
-function PagePagination({ pages, activePage }) {
+function PagePagination({ pages, activePage, page }) {
     const pageLinks = []
     const [start, setStart] = useState(0)
     const [end, setEnd] = useState(9)
@@ -22,12 +22,13 @@ function PagePagination({ pages, activePage }) {
 
     }, [])
 
+    
 
     for (let i = 1; i <= pages; i++) {
         let active = activePage === i ? "active" : ""
         pageLinks.push(
             <NavLink
-                to={`/popular/${i}`}
+                to={`/${page}/${i}`}
                 className={`page-links ${active}`}
                 key={i}
             >
@@ -35,6 +36,7 @@ function PagePagination({ pages, activePage }) {
             </NavLink>
         )
     }
+     const buttonClass = pages <= 9 ? "null-div" : "button-div" 
 
     const nextPage = () => {
         if (end + 1 < pages) {
@@ -53,7 +55,7 @@ function PagePagination({ pages, activePage }) {
 
     return (
         <div className="pagination-con">
-            <div className="prev-buttons">
+            <div className={buttonClass}>
                 <button onClick={prevPage}>&laquo;</button>
             </div>
             <div className="pagination-links">
@@ -67,7 +69,7 @@ function PagePagination({ pages, activePage }) {
                 }
             </div>
 
-            <div className="next-buttons">
+            <div className={buttonClass}>
                 <button onClick={nextPage}>&raquo;</button>
             </div>
         </div>
