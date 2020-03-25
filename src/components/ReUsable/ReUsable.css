@@ -171,7 +171,7 @@ button {
 
     .ratings p{
         font-size: 1.5rem;
-        background: rgba(0,0,0,0.5);
+       
     }
     .ratings h3 {
         font-size: 1.8rem;
@@ -368,4 +368,77 @@ button {
         display: block;
     }
 
+}
+
+/* landscape view for phone screens*/
+
+@media (orientation:landscape) {
+    .movie-poster{
+        width: 27%;
+        min-height: 55vh;
+    }
+
+    .movie-poster img {
+        height: 45vh;
+    }
+    .movie-title{
+        min-height: 10vh;
+    }
+
+
+    .large{
+        display: block;
+        border-bottom: 2px solid lightgray;
+        padding-bottom: 10px;
+    }
+        
+    .details-img{
+        width: 50%;
+    }
+    .small{
+        display: none;
+    }
+
+    .details-section{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        min-height: 80vh;
+     }
+     
+    .details-img img {
+        height: 70vh;
+    }
+    .large-rate{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 60vh;
+        background: rgba(0,0,0,0.5);
+    }
+    .cast-slider{
+        min-width: 22%;
+    }
+
+    .ratings p{
+        font-size: 1.2rem;
+       
+    }
+    .ratings h3 {
+        font-size: 1.3rem;
+    }
+    .overview p {
+        font-size: 1rem;   
+    }
+    .cast-detail img {
+        height: 45vh;
+    }
+    .character{
+        min-height: 10vh;
+    }
+    .cast-detail{
+        margin-bottom: 20px;
+    }
 }

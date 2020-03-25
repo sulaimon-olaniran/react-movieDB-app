@@ -24,6 +24,12 @@
     }
 }
 
+@media (orientation:landscape) {
+    .img-slider{
+        min-width: 50%;
+    }
+}
+
 @media(min-width : 1200px){
   .img-slider{
       min-width: 33.3333%;

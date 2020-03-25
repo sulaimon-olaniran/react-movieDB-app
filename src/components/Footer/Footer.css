@@ -138,15 +138,53 @@
    .fa {
     font-size: 2rem;
     width: 60px;
-    height: 60px;
+      height: 60px;
+    }
+    .about-div{
+      width: 40%;
+    }
+    .logo-div{
+      width: 30%;
+    }
+    .logo-div img {
+      width: 100%;
+    }
   }
-  .about-div{
-    width: 40%;
-  }
-  .logo-div{
-    width: 30%;
-  }
-  .logo-div img {
-    width: 100%;
-  }
+
+  @media (orientation:landscape) {
+    .footer-style{
+      flex-direction: row;
+      justify-content: space-evenly;
+      min-height: 40vh;
+    }
+ 
+    .social-media{
+      flex-direction: row;
+      width: 20%;
+      height: 30vh;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .fa {
+     font-size: 1.2rem;
+     width: 45px;
+       height: 35px;
+     }
+     .about-div{
+       width: 40%;
+     }
+     .logo-div{
+       width: 25%;
+     }
+     .logo-div img {
+       width: 100%;
+     }
+     
+    .about-div p {
+      font-size: 1.2rem;
+    }
+
+    .about-div h2{
+      font-size: 1.4rem;
+    }
   }

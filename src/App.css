@@ -51,3 +51,12 @@ footer {
     min-height: 10vh;
   }
 }
+
+@media (orientation:landscape) {
+  .navigation{
+    height: 12vh;
+  }
+  .main-container{
+    margin-top: 12vh;
+  }
+}
