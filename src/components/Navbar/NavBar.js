@@ -20,16 +20,16 @@ function NavBar() {
         </Link>
       </div>
       <ul className="ul-nav">
-        <NavLink  style={linkStyle}  to="/"  >
+        <NavLink  style={linkStyle} exact to="/" activeClassName="active-link" >
           <li>Home</li>
         </NavLink>
-        <NavLink style={linkStyle}  to="/search">
+        <NavLink style={linkStyle}  to="/search" activeClassName="active-link">
           <li >Search</li>
         </NavLink>
-        <NavLink style={linkStyle}  to={`/popular`} >
+        <NavLink style={linkStyle}  to={`/popular/${1}`}  activeClassName="active-link">
           <li>Popular</li>
         </NavLink>
-        <NavLink style={linkStyle}  to="/upcoming" >
+        <NavLink style={linkStyle} to={`/upcoming/${1}`}  activeClassName="active-link">
           <li>Upcoming</li>
         </NavLink>
       </ul>

@@ -17,8 +17,8 @@
  
 }
 .logo-image {
-    width: 90%;
-    height: 45px;
+    width: 80%;
+    height: 40px;
 }
 
 
@@ -33,6 +33,20 @@
 .nav-bar ul li {
    padding-right: 0px;
    color: gray;
+   font-size: 1.2rem;
+   margin: 0px 5px;
+}
+
+li:hover{
+    color: rgb(63, 62, 62);
+    border-bottom: 2px solid salmon;
+}
+
+.active-link{
+    border-right: 2px solid salmon;
+    border-left: 2px solid salmon;
+    padding: 0px 5px;
+    border-radius: 10px;
 }
 /* hiding nav links for screen size of width*/
 @media(max-width : 768px){
@@ -52,4 +66,11 @@
     height: 70px;
 }
 
+}
+
+@media(min-width : 968px){
+  .logo-image{
+      width: 60%;
+      height: 60px;
+  }
 }

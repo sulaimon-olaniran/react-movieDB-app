@@ -40,9 +40,14 @@ footer {
     }
 }
 
+
+
 @media(min-width : 1200px){
 
   footer{
     min-height: 40vh;
+  }
+  .navigation{
+    min-height: 10vh;
   }
 }

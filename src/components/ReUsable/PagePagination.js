@@ -6,17 +6,21 @@ import './ReUsable.css'
 function PagePagination({ pages, activePage, page }) {
     const pageLinks = []
     const [start, setStart] = useState(0)
-    const [end, setEnd] = useState(9)
+    const [end, setEnd] = useState(0)
 
     useEffect(() => {
         let n = activePage / 10
         let number = Math.floor(n)
-        let ender = (number * 10) + 9
+        let ender = (number * 10) + 10
         let starter = ender - 10
 
         if (number !== 0) {
             setStart(starter)
             setEnd(ender)
+        }
+        else{
+            setStart(0)
+            setEnd(10)
         }
 
 
@@ -40,14 +44,14 @@ function PagePagination({ pages, activePage, page }) {
 
     const nextPage = () => {
         if (end + 1 < pages) {
-            setStart(start + 9)
+            setStart(start + 10)
             setEnd(end + 10)
         }
     }
 
     const prevPage = () => {
         if (end > 9) {
-            setStart(start - 9)
+            setStart(start - 10)
             setEnd(end - 10)
         }
     }

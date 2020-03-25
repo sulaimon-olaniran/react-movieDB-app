@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import EachCast from './EachCast'
+import './ReUsable.css'
 
 
 function CastCrews(props) {
@@ -26,6 +27,7 @@ function CastCrews(props) {
 
     return (
         <div className="cast-slider-con">
+            <button onClick={goLeft} className="slide-button left"> left </button>
             {
                 casts.map((cast, index) => {
                     return (
@@ -41,8 +43,7 @@ function CastCrews(props) {
                     )
                 })
             }
-           {/* <button className="slide-button" id="go-left" onClick={goLeft} >Go Left</button>
-            <button className="slide-button" id="go-right" onClick={goRiight}>Go Right</button>*/}
+            <button onClick={goRiight} className="slide-button right"> right </button>
         </div>
     )
 

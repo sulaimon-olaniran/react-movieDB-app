@@ -93,4 +93,7 @@
      .burger{
          display: none;
      }
+     .burger-button{
+         display: none;
+     }
 }

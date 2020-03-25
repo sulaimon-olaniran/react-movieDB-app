@@ -4,7 +4,14 @@
    justify-content: center;
    align-items: center;
     width: 100%;
-    margin-bottom: 10px;
+    margin: 10px 0px;
+}
+.slide-button{
+    display: none;
+}
+
+.large{
+    display: none;
 }
 
 .pagination-links{
@@ -16,6 +23,9 @@
 .button-div {
     width: 8%;
 }
+.button-div:hover{
+    background-color:rgb(85, 84, 84);
+}
 
 .null-div {
     display: none;
@@ -23,19 +33,19 @@
 
 button {
     width: 100%;
-    height: 35px;
-    background: none;
+    min-height: 50px;
     border: 1px solid rgb(88, 88, 88);
     color: lightgray;
     font-size: 1.2rem;
     text-align: center;
+    cursor: pointer;
+    background-color: rgba(0,0,0,0.5);
 }
-
 
 .page-links {
     color: lightgray;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
    
 }
 .each-page {
@@ -45,6 +55,10 @@ button {
     height: 35px;
     border: 1px solid rgb(88, 88, 88);
     align-items: center;
+}
+.each-page:hover{
+    cursor: pointer;
+    background-color:rgb(85, 84, 84);
 }
 
 .active-page {
@@ -82,6 +96,7 @@ button {
 }
 .ratings{
     text-align: center;
+    background-color: rgba(0,0,0,0.5);
 }
 .ratings h3 {
     font-size: 3vh;
@@ -89,6 +104,9 @@ button {
 }
 .ratings p {
     font-size: 2.5vh;
+    background-color: rgba(0,0,0,0.5);
+    margin: 3px;
+    padding: 2px;
 }
 .details-img{
     width: 90%;
@@ -109,8 +127,61 @@ button {
     letter-spacing: 0.8px;
 }
 .overview{
-    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     margin-bottom: 5px;
+    background-color: rgba(0,0,0,0.5);
+}
+/* oveeelefjalkajjakljakjakajakjkajklajkajkajakjakajkajakjkdfjlkhdhfjhafhafh*/
+
+@media(min-width : 1200px){
+    .details-section{
+       display: flex;
+       justify-content: space-around;
+       flex-direction: row;
+       min-height: 90vh;
+
+    }
+    .small{
+        display: none;
+    }
+    .large{
+        display: block;
+        border-bottom: 2px solid lightgray;
+        padding-bottom: 10px;
+    }
+        
+    .details-img{
+        width: 40%;
+    }
+    .details-img img {
+        height: 80vh;
+    }
+    .large-rate{
+        width: 30%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 60vh;
+    }
+
+    .ratings p{
+        font-size: 1.5rem;
+        background: rgba(0,0,0,0.5);
+    }
+    .ratings h3 {
+        font-size: 1.8rem;
+    }
+    .overview p {
+        font-size: 1.5rem;
+        -webkit-text-stroke: 1px rgb(228, 224, 224);
+        color: rgb(230, 227, 227);
+         text-align: center;
+    }
 }
 
 /* for movie.js */
@@ -229,6 +300,41 @@ button {
     .movie-poster img{
         height: 30vh;
     }
+    .large{
+        display: block;
+        border-bottom: 2px solid lightgray;
+        padding-bottom: 10px;
+    }
+        
+    .details-img{
+        width: 50%;
+    }
+    .small{
+        display: none;
+    }
+
+    .details-section{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        min-height: 80vh;
+     }
+     
+    .details-img img {
+        height: 70vh;
+    }
+    .large-rate{
+        width: 40%;
+        background: rgba(0,0,0,0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 60vh;
+    }
+    .cast-slider{
+        min-width: 29%;
+    }
 }
 
 @media(min-width : 1200px){
@@ -239,4 +345,27 @@ button {
     .movie-poster img{
         height: 40vh;
     }
+    .cast-slider{
+        min-width: 16.5%;
+    }
+    .cast-slider-con{
+        overflow: hidden;
+        display: flex;
+    }
+    .left{
+        position: absolute;
+        left: 0;
+        top: 5;
+    }
+    .right{
+        position: absolute;
+        right: 0;
+    }
+
+    .slide-button{
+        z-index: 999999;
+        background-color: rgba(0,0,0,0.5);
+        display: block;
+    }
+
 }

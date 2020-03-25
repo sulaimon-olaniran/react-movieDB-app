@@ -10,11 +10,12 @@ import './ReUsable.css'
 function MovieDetails({ match }) {
     const [movie, setMovie] = useState([])
     const { promiseInProgress } = usePromiseTracker()
+
     useEffect(() => {
         trackPromise(
             fetchMovieDetail()
         )
-      //  window.scrollTo(0, 0)
+        //  window.scrollTo(0, 0)
     }, [])
 
     const fetchMovieDetail = async () => {
@@ -34,27 +35,42 @@ function MovieDetails({ match }) {
                         />
                     </div> :
                     <div>
-                    <section className="details-section">
-                        <div className="ratings">
-                            <h3>{movie.title}<br /> <span>({movie.release_date})</span></h3>
-                            <p>Rating : {movie.vote_average}</p>
-                        </div>
-                        <div className="details-img">
+                        <section className="details-section"
+                            style={{
+                                backgroundImage: "url(" + `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` + ")",
+                                backgroundPosition: 'center',
+                                backgroundSize: 'cover',
+                                backgroundRepeat: 'no-repeat'
+                            }}
+                        >
+                            <div className="ratings small">
+                                <h3>{movie.title}<br /> <span>({movie.release_date})</span></h3>
+                                <p>Rating : {movie.vote_average}</p>
+                            </div>
+                            <div className="details-img">
 
-                          {  movie.poster_path === null ? <img src={alterImage} alt="Movie Poster" /> :
-                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Movie Poster" />}
-                        </div>
-                        <div className="overview">
-                            <p>{movie.overview}</p>
-                        </div>
-                    </section>
+                                {movie.poster_path === null ? <img src={alterImage} alt="Movie Poster" /> :
+                                    <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="Movie Poster" />}
+                            </div>
+                            <div className="large-rate">
+                                <div className="ratings large">
+                                    <h3>{movie.title}<br /> <span>({movie.release_date})</span></h3>
+                                    <p>Rating : {movie.vote_average}</p>
+                                </div>
+                                <h3>overview</h3>
+                                <div className="overview">
+                                    <p>{movie.overview}</p>
+                                </div>
 
-                    <h3>Movie's Casts</h3>
+                            </div>
+                        </section>
 
-                    <section className="cast-crew">
-                        <CastCrews identity={match.params.id} />
-                    </section>
-                 </div>
+                        <h3>Movie's Casts</h3>
+
+                        <section className="cast-crew">
+                            <CastCrews identity={match.params.id} />
+                        </section>
+                    </div>
             }
 
         </div>
