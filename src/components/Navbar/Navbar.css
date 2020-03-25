@@ -28,6 +28,7 @@
     align-items: center;
     list-style: none;
     width: 70%;
+    display: none;
 }
 
 .nav-bar ul li {
@@ -49,20 +50,23 @@ li:hover{
     border-radius: 10px;
 }
 /* hiding nav links for screen size of width*/
-@media(max-width : 768px){
-  .nav-bar ul {
-      display: none;
-  }
+@media(min-width : 300px){
   .nav-bar {
       justify-content: space-between;
   }
 }
 
 
-@media(min-width : 768px){
+@media(min-width : 500px){
     
 .logo-image {
-    height: 70px;
+    height: 40px;
+}
+
+@media(min-width : 760px){
+    .logo-image {
+        height: 70px;
+    }
 }
 
 }
@@ -72,18 +76,7 @@ li:hover{
       width: 60%;
       height: 60px;
   }
-}
-
-@media (orientation:landscape) {
-    .logo-image{
-        width: 60%;
-        height: 40px;
-    }
-    .nav-bar ul {
-        display: none;
-    }
-    
-  .nav-bar {
-    justify-content: space-between;
+  .nav-bar ul {
+    display: flex;
 }
 }

@@ -137,51 +137,7 @@ button {
 /* oveeelefjalkajjakljakjakajakjkajklajkajkajakjakajkajakjkdfjlkhdhfjhafhafh*/
 
 @media(min-width : 1200px){
-    .details-section{
-       display: flex;
-       justify-content: space-around;
-       flex-direction: row;
-       min-height: 90vh;
-
-    }
-    .small{
-        display: none;
-    }
-    .large{
-        display: block;
-        border-bottom: 2px solid lightgray;
-        padding-bottom: 10px;
-    }
-        
-    .details-img{
-        width: 40%;
-    }
-    .details-img img {
-        height: 80vh;
-    }
-    .large-rate{
-        width: 30%;
-        background: rgba(0,0,0,0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        min-height: 60vh;
-    }
-
-    .ratings p{
-        font-size: 1.5rem;
-       
-    }
-    .ratings h3 {
-        font-size: 1.8rem;
-    }
-    .overview p {
-        font-size: 1.5rem;
-        -webkit-text-stroke: 1px rgb(228, 224, 224);
-        color: rgb(230, 227, 227);
-         text-align: center;
-    }
+    
 }
 
 /* for movie.js */
@@ -269,6 +225,76 @@ button {
     border-radius: 15px;
 }
 
+@media (min-width : 520px) {
+    .movie-poster{
+        width: 27%;
+        min-height: 55vh;
+    }
+
+    .movie-poster img {
+        height: 45vh;
+    }
+    .movie-title{
+        min-height: 10vh;
+    }
+
+
+    .large{
+        display: block;
+        border-bottom: 2px solid lightgray;
+        padding-bottom: 10px;
+    }
+        
+    .details-img{
+        width: 50%;
+    }
+    .small{
+        display: none;
+    }
+
+    .details-section{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        min-height: 80vh;
+     }
+     
+    .details-img img {
+        height: 70vh;
+    }
+    .large-rate{
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 60vh;
+        background: rgba(0,0,0,0.5);
+    }
+    .cast-slider{
+        min-width: 22%;
+    }
+
+    .ratings p{
+        font-size: 1.2rem;
+       
+    }
+    .ratings h3 {
+        font-size: 1.3rem;
+    }
+    .overview p {
+        font-size: 1rem;   
+    }
+    .cast-detail img {
+        height: 45vh;
+    }
+    .character{
+        min-height: 10vh;
+    }
+    .cast-detail{
+        margin-bottom: 20px;
+    }
+}
 
 
 
@@ -289,6 +315,29 @@ button {
 
     .movie-poster{
         width: 30%;
+    }
+    .cast-slider{
+        min-width: 30%;
+    }
+
+    .ratings p{
+        font-size: 1.3rem;
+       
+    }
+    .ratings h3 {
+        font-size: 1.4rem;
+    }
+    .overview p {
+        font-size: 1.2rem;   
+    }
+    .cast-detail img {
+        height: 35vh;
+    }
+    .character{
+        min-height: 8vh;
+    }
+    .cast-detail{
+        margin-bottom: 20px;
     }
 }
 
@@ -367,78 +416,53 @@ button {
         background-color: rgba(0,0,0,0.5);
         display: block;
     }
+    .details-section{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        min-height: 90vh;
+ 
+     }
+     .small{
+         display: none;
+     }
+     .large{
+         display: block;
+         border-bottom: 2px solid lightgray;
+         padding-bottom: 10px;
+     }
+         
+     .details-img{
+         width: 40%;
+     }
+     .details-img img {
+         height: 80vh;
+     }
+     .large-rate{
+         width: 30%;
+         background: rgba(0,0,0,0.5);
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         min-height: 60vh;
+     }
+ 
+     .ratings p{
+         font-size: 1.5rem;
+        
+     }
+     .ratings h3 {
+         font-size: 1.8rem;
+     }
+     .overview p {
+         font-size: 1.5rem;
+         -webkit-text-stroke: 1px rgb(228, 224, 224);
+         color: rgb(230, 227, 227);
+          text-align: center;
+     }
 
 }
 
 /* landscape view for phone screens*/
 
-@media (orientation:landscape) {
-    .movie-poster{
-        width: 27%;
-        min-height: 55vh;
-    }
-
-    .movie-poster img {
-        height: 45vh;
-    }
-    .movie-title{
-        min-height: 10vh;
-    }
-
-
-    .large{
-        display: block;
-        border-bottom: 2px solid lightgray;
-        padding-bottom: 10px;
-    }
-        
-    .details-img{
-        width: 50%;
-    }
-    .small{
-        display: none;
-    }
-
-    .details-section{
-        display: flex;
-        justify-content: space-around;
-        flex-direction: row;
-        min-height: 80vh;
-     }
-     
-    .details-img img {
-        height: 70vh;
-    }
-    .large-rate{
-        width: 40%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        min-height: 60vh;
-        background: rgba(0,0,0,0.5);
-    }
-    .cast-slider{
-        min-width: 22%;
-    }
-
-    .ratings p{
-        font-size: 1.2rem;
-       
-    }
-    .ratings h3 {
-        font-size: 1.3rem;
-    }
-    .overview p {
-        font-size: 1rem;   
-    }
-    .cast-detail img {
-        height: 45vh;
-    }
-    .character{
-        min-height: 10vh;
-    }
-    .cast-detail{
-        margin-bottom: 20px;
-    }
-}
