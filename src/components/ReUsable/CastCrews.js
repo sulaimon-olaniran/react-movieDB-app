@@ -18,16 +18,21 @@ function CastCrews(props) {
         setCasts(casts.cast)
     }
     const goLeft = ()=>{
-       setX(x + 100)
+      setX(x + 500)
     }
 
     const goRiight = ()=>{
-        setX(x-100)
+        setX(x - 500)
+        console.log(x)
     }
+    const lenghts = Math.round((casts.length - 1)/5.5)
+
+    const right = x === 0? "deactivate" : ""
+    const left = x === -500 * (lenghts) ? "deactivate" : ''
 
     return (
         <div className="cast-slider-con">
-            <button onClick={goLeft} className="slide-button left"> left </button>
+            <button onClick={goLeft} className={`slide-button ${right}`} id="left">&laquo;</button>
             {
                 casts.map((cast, index) => {
                     return (
@@ -43,7 +48,7 @@ function CastCrews(props) {
                     )
                 })
             }
-            <button onClick={goRiight} className="slide-button right"> right </button>
+            <button onClick={goRiight} className={`slide-button ${left}`} id="right">&raquo;</button>
         </div>
     )
 

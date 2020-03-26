@@ -10,6 +10,7 @@
     display: none;
 }
 
+
 .large{
     display: none;
 }
@@ -22,16 +23,25 @@
 
 .button-div {
     width: 8%;
+    height: 35px;
 }
-.button-div:hover{
-    background-color:rgb(85, 84, 84);
+.button-div button{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(78, 76, 76);
+  color: lightgray;
+  cursor: pointer;
+}
+.button-div button:hover{
+    background-color:lightgray;
+    color: rgb(78, 76, 76);
 }
 
 .null-div {
     display: none;
 }
 
-button {
+#left #right {
     width: 100%;
     min-height: 50px;
     border: 1px solid rgb(88, 88, 88);
@@ -40,13 +50,18 @@ button {
     text-align: center;
     cursor: pointer;
     background-color: rgba(0,0,0,0.5);
+    outline: none;
 }
 
 .page-links {
     color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     font-size: 1.1rem;
-   
+    width: 100%;
+    height: 100%;
 }
 .each-page {
     display: flex;
@@ -75,6 +90,7 @@ button {
     text-align: center;
      margin: 5px 0;
      letter-spacing: 0.5px;
+     background-color: rgba(0,0,0,0.5);
 }
 
 .movie-details{
@@ -83,6 +99,7 @@ button {
     flex-direction: column;
     min-height: 90vh;
     color: whitesmoke;
+    background-color: rgba(0,0,0,0.5);
 }
 .details-section{
     width: 100%;
@@ -96,7 +113,7 @@ button {
 }
 .ratings{
     text-align: center;
-    background-color: rgba(0,0,0,0.5);
+   
 }
 .ratings h3 {
     font-size: 3vh;
@@ -104,7 +121,7 @@ button {
 }
 .ratings p {
     font-size: 2.5vh;
-    background-color: rgba(0,0,0,0.5);
+   
     margin: 3px;
     padding: 2px;
 }
@@ -132,12 +149,7 @@ button {
     align-items: center;
     width: 100%;
     margin-bottom: 5px;
-    background-color: rgba(0,0,0,0.5);
-}
-/* oveeelefjalkajjakljakjakajakjkajklajkajkajakjakajkajakjkdfjlkhdhfjhafhafh*/
-
-@media(min-width : 1200px){
-    
+   
 }
 
 /* for movie.js */
@@ -201,7 +213,7 @@ button {
 .cast-detail img {
     width: 100%;
     height: 35vh;
-    margin-right: 20px;
+  
     border-radius: 15px;
 }
 .cast-crew{
@@ -299,7 +311,9 @@ button {
 
 
 @media(min-width : 768px){
-
+    .movie-details h3{
+        background-color: transparent;
+    }
     .each-page {
         display: flex;
         width: 10%;
@@ -322,6 +336,7 @@ button {
 
     .ratings p{
         font-size: 1.3rem;
+        background-color: rgba(0,0,0,0.5);
        
     }
     .ratings h3 {
@@ -395,18 +410,19 @@ button {
         height: 40vh;
     }
     .cast-slider{
-        min-width: 16.5%;
+        min-width: 13.5%;
+        margin: 0% 0.5%;
     }
     .cast-slider-con{
         overflow: hidden;
         display: flex;
     }
-    .left{
+    #left{
         position: absolute;
         left: 0;
         top: 5;
     }
-    .right{
+    #right{
         position: absolute;
         right: 0;
     }
@@ -414,7 +430,10 @@ button {
     .slide-button{
         z-index: 999999;
         background-color: rgba(0,0,0,0.5);
+        color: lightgrey;
         display: block;
+        cursor: pointer;
+       
     }
     .details-section{
         display: flex;
@@ -439,27 +458,36 @@ button {
          height: 80vh;
      }
      .large-rate{
-         width: 30%;
-         background: rgba(0,0,0,0.5);
+         width: 40%;
          display: flex;
          justify-content: center;
          align-items: center;
          flex-direction: column;
          min-height: 60vh;
      }
- 
+    
+     .details-img{
+        width: 50%;
+    }
      .ratings p{
          font-size: 1.5rem;
-        
+         background-color: transparent;
      }
      .ratings h3 {
          font-size: 1.8rem;
      }
      .overview p {
-         font-size: 1.5rem;
+         font-size: 1.3rem;
          -webkit-text-stroke: 1px rgb(228, 224, 224);
-         color: rgb(230, 227, 227);
+          color: rgb(230, 227, 227);
           text-align: center;
+          background-color: transparent;
+     }
+     .button-div{
+         height: 40px;
+     }
+     .deactivate{
+         display: none;
      }
 
 }

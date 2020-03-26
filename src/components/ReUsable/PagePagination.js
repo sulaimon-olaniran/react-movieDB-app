@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import './ReUsable.css'
 
 
@@ -18,7 +18,7 @@ function PagePagination({ pages, activePage, page }) {
             setStart(starter)
             setEnd(ender)
         }
-        else{
+        else {
             setStart(0)
             setEnd(10)
         }
@@ -26,21 +26,26 @@ function PagePagination({ pages, activePage, page }) {
 
     }, [])
 
-    
+    const consoles = () => {
+        console.log("hello world")
+    }
 
     for (let i = 1; i <= pages; i++) {
         let active = activePage === i ? "active" : ""
         pageLinks.push(
             <NavLink
+                onClick={consoles}
                 to={`/${page}/${i}`}
                 className={`page-links ${active}`}
                 key={i}
             >
-                {i}
+                
+                    {i}
+                
             </NavLink>
         )
     }
-     const buttonClass = pages <= 9 ? "null-div" : "button-div" 
+    const buttonClass = pages <= 9 ? "null-div" : "button-div"
 
     const nextPage = () => {
         if (end + 1 < pages) {

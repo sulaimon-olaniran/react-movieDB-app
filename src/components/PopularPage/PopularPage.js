@@ -14,13 +14,6 @@ function PopularPage({ match }) {
     const [activePage, setActivePage] = useState(match.params.page)
     const [allMovies, setAllmovies] = useState(0)
 
-    /*, () => {
-        const scrollY = localStorage.getItem('scrollY')
-        return scrollY ? JSON.parse(scrollY) : 0*/
-
-        //localStorage.setItem('scrollY', JSON.stringify(scrollPosition))
-
-
     useEffect(() => {
         trackPromise(
             axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=644c44d2acac97a0ba2dba1edacf5a00&page=${match.params.page}`)

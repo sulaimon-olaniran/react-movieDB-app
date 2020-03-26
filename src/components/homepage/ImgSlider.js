@@ -20,7 +20,7 @@ function ImgSlider(){
    }, [])
    useEffect(() => {
     const interval = setInterval(() => {
-      x === -100 * (images.length - 1) ? setX(0) :  setX(x - 100);
+      x === -100 * (images.length - 3) ? setX(0) :  setX(x - 100);
     }, 2000);
     return () => clearInterval(interval);
   }, [x]);
