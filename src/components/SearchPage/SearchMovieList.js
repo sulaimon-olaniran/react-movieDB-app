@@ -1,26 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import './Searchpage.css'
-import InfiniteScroll from "react-infinite-scroll-component"
 import Movie from '../ReUsable/Movie'
 import MovieNotFound from './MovieNotFound'
 import axios from 'axios'
 import { trackPromise } from 'react-promise-tracker'
 import { usePromiseTracker } from "react-promise-tracker"
-import { DotLoader, BeatLoader } from "react-spinners"
-
-
+import { DotLoader } from "react-spinners"
+import PagePagination from '../ReUsable/PagePagination'
 
 const SearchMovieList = ({ match }) => {
     const { promiseInProgress } = usePromiseTracker()
     const apiKey = "644c44d2acac97a0ba2dba1edacf5a00"
     const [moviesList, setMoviesList] = useState([])
-    const [pages, setPages] = useState(2)
     const [totalMovies, setTotalmovies] = useState(0)
     const [loading, setLoading] = useState(false)
+    const activePage = match.params.page
 
     useEffect(() => {
         trackPromise(
-            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${match.params.movie}`)
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${match.params.movie}&page=${match.params.page}`)
                 .then(res => {
                     setMoviesList(res.data.results)
                     setTotalmovies(res.data.total_results)
@@ -29,25 +27,13 @@ const SearchMovieList = ({ match }) => {
                 .catch(err => {
                     console.log(err)
                 }))
-    }, [])
+    }, [match.params.page, match.params.movie])
+   
+    const numOfPages = Math.floor(totalMovies / 20)
 
-    const fetchMoreData = () => {
-        setPages(pages + 1)
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${match.params.movie}&page=${pages}`)
-            .then(res => {
-                setMoviesList(moviesList.concat(res.data.results))
-            })
-    }
 
     return (
         <div className="listed-movies">
-         
-            <InfiniteScroll
-                dataLength={moviesList.length}
-                next={fetchMoreData}
-                hasMore={totalMovies > moviesList.length ? true : false}
-                loader={<div className="loader"><BeatLoader color={"lightgray"} size={30} /> </div>}
-            >
 
                 { promiseInProgress ?
                     <div className="img-gallary">
@@ -69,7 +55,7 @@ const SearchMovieList = ({ match }) => {
                                         image={movie.poster_path}
                                         title={movie.title}
                                         id={movie.id}
-                                        page={"search"}
+                                        page={`search/${match.params.movie}/${match.params.page}`}
                                     />
                                 )
                             })
@@ -78,9 +64,12 @@ const SearchMovieList = ({ match }) => {
                     </div>
     
                     }
-
-            </InfiniteScroll>
-            
+             <PagePagination
+               page = {`search/${match.params.movie}`}
+               activePage = {activePage}
+               pages = {numOfPages}
+             />
+          
         </div>
     )
 }

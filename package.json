@@ -20,6 +20,7 @@
     "react-router-scroll-4": "^1.0.0-beta.2",
     "react-router-scroll-memory": "^2.0.5",
     "react-scripts": "3.4.0",
+    "react-scroll-into-view": "^1.8.1",
     "react-spinners": "^0.8.0"
   },
   "scripts": {

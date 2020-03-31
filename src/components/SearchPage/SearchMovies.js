@@ -18,7 +18,7 @@ const SearchMovies = () => {
           <input type="text" placeholder="Search For Movie...."
             onChange={handleChange}
           />
-          <Link to={`/search/${searchField}`}>
+          <Link to={`/search/${searchField}/${1}`}>
             <button  className="form-button">Search</button>
           </Link>
         </form>

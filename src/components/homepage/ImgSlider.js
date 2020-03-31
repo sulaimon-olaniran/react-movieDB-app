@@ -18,12 +18,14 @@ function ImgSlider(){
         console.log(err)
     })
    }, [])
+
    useEffect(() => {
     const interval = setInterval(() => {
       x === -100 * (images.length - 3) ? setX(0) :  setX(x - 100);
     }, 2000);
+
     return () => clearInterval(interval);
-  }, [x]);
+  }, [x, images.length]);
 
   return(
       <div className="slider-container">

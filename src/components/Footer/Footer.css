@@ -2,76 +2,84 @@
   box-sizing: border-box;
 }
 
+span {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+
 .footer-style {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .social-media {
-    width: 90%;
-    min-height: 12vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border: 3px solid salmon;
-    border-radius: 10px;
+  width: 90%;
+  min-height: 12vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 3px solid salmon;
+  border-radius: 10px;
 }
 
 .about-div{
-    width: 90%;
-    margin-bottom: 10px;
-    min-height: 20vh;
-    border-top-color: palevioletred;
-    border-radius: 20px;
-    border-bottom-left-radius: 50px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    color: lightgray;
-    padding: 0px 25px;
-    padding-bottom: 5px;
+  width: 90%;
+  margin-bottom: 10px;
+  min-height: 20vh;
+  border-top-color: palevioletred;
+  border-radius: 20px;
+  border-bottom-left-radius: 50px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  color: lightgray;
+  padding: 0px 25px;
+  padding-bottom: 5px;
 }
 .about-div h2 {
-    border-bottom: 2px solid snow;
+  border-bottom: 2px solid snow;
 }
 
 .about-div p{
-    padding: 10px;
-    font-size: 1.2rem;
-    border-left: 2px solid burlywood;
-    border-right: 2px solid burlywood;
-    border-radius: 15px;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-left: 2px solid burlywood;
+  border-right: 2px solid burlywood;
+  border-radius: 15px;
 }
 
 .logo-div {
-    width: 100%;
-    min-height: 20vh;
-    background-color: transparent; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  min-height: 20vh;
+  background-color: transparent; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 10px 30px 0 rgba(0, 0, 0, 0.19);*/
 }
 
 .logo-div img {
-    width: 80%;
-    height: 15vh;
+  width: 80%;
+  height: 15vh;
 }
 
 .fa {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    width: 50px;
-    height: 40px;
-    text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  width: 50px;
+  height: 40px;
+  text-decoration: none;
   }
   
   .fa:hover {

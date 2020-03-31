@@ -5,30 +5,32 @@ import './ReUsable.css'
 
 function CastCrews(props) {
     const [casts, setCasts] = useState([])
+    const [castLength, setCastLength] = useState(0)
     const [x, setX] = useState(0)
 
     useEffect(() => {
+        const fetchCastDetail = async () => {
+            const castDetails = await fetch(`https://api.themoviedb.org/3/movie/${props.identity}/credits?api_key=644c44d2acac97a0ba2dba1edacf5a00`)
+            const casts = await castDetails.json()
+            console.log(casts.cast)
+            setCastLength(casts.cast.length)
+            setCasts(casts.cast)
+        }
         fetchCastDetail()
-    }, [])
+    }, [props.identity])
 
-    const fetchCastDetail = async () => {
-        const castDetails = await fetch(`https://api.themoviedb.org/3/movie/${props.identity}/credits?api_key=644c44d2acac97a0ba2dba1edacf5a00`)
-        const casts = await castDetails.json()
-        console.log(casts.cast)
-        setCasts(casts.cast)
-    }
+    
     const goLeft = ()=>{
-      setX(x + 500)
+      setX(x + 100)
     }
 
     const goRiight = ()=>{
-        setX(x - 500)
+        setX(x - 100)
         console.log(x)
     }
-    const lenghts = Math.round((casts.length - 1)/5.5)
 
-    const right = x === 0? "deactivate" : ""
-    const left = x === -500 * (lenghts) ? "deactivate" : ''
+    const right = x === 0 ? "deactivate" : ""
+    const left = x === -100 * (castLength - 6 ) ? "deactivate" : ''
 
     return (
         <div className="cast-slider-con">

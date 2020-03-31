@@ -10,18 +10,13 @@ function UpcomingPage({ match }) {
     const { promiseInProgress } = usePromiseTracker()
     const [movies, setMovies] = useState([])
     const [allMovies, setAllmovies] = useState(0)
-    const [activePage, setActivePage] = useState(match.params.page)
-    //const numOfPages = Math.round(59 / 20)
-   
+    const activePage = match.params.page
     useEffect(() => {
         trackPromise(
             axios.get(`https://api.themoviedb.org/3/movie/upcoming?api_key=644c44d2acac97a0ba2dba1edacf5a00&region=us&page=${match.params.page}`)
                 .then(res => {
-                    console.log(res.data.results)
                     setMovies(res.data.results)
                     setAllmovies(res.data.total_results)
-                    console.log(res.data.total_results)
-                    console.log(numOfPages)
                 })
                 .catch(err => {
                     console.log(err)

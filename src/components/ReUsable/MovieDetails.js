@@ -12,17 +12,26 @@ function MovieDetails({ match }) {
     const { promiseInProgress } = usePromiseTracker()
 
     useEffect(() => {
+        const fetchMovieDetail = async () => {
+            const movieDetail = await fetch(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=644c44d2acac97a0ba2dba1edacf5a00`)
+            const movie = await movieDetail.json()
+            console.log(movie)
+            setMovie(movie)
+        }
+        
         trackPromise(
             fetchMovieDetail()
         )
-        //  window.scrollTo(0, 0)
-    }, [])
+       
+    }, [match.params.id])
 
-    const fetchMovieDetail = async () => {
-        const movieDetail = await fetch(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=644c44d2acac97a0ba2dba1edacf5a00`)
-        const movie = await movieDetail.json()
-        console.log(movie)
-        setMovie(movie)
+    
+    const styles = {
+        backgroundImage: `url(https://image.tmdb.org/t/p/w780${movie.backdrop_path})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'
+
     }
     return (
         <div className="movie-details">
@@ -36,12 +45,7 @@ function MovieDetails({ match }) {
                     </div> :
                     <div>
                         <section className="details-section"
-                            style={{
-                                backgroundImage: "url(" + `https://image.tmdb.org/t/p/w780${movie.backdrop_path}` + ")",
-                                backgroundPosition: 'center',
-                                backgroundSize: 'cover',
-                                backgroundRepeat: 'no-repeat'
-                            }}
+                            style={styles}
                         >
                             <div className="ratings small">
                                 <h3>{movie.title}<br /> <span>({movie.release_date})</span></h3>

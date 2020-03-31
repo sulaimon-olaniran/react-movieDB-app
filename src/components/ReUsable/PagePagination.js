@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './ReUsable.css'
 
 
@@ -24,24 +24,26 @@ function PagePagination({ pages, activePage, page }) {
         }
 
 
-    }, [])
-
-    const consoles = () => {
-        console.log("hello world")
-    }
+    }, [activePage])
 
     for (let i = 1; i <= pages; i++) {
         let active = activePage === i ? "active" : ""
         pageLinks.push(
             <NavLink
-                onClick={consoles}
-                to={`/${page}/${i}`}
+                to={
+                    {
+                        pathname: `/${page}/${i}`,
+                        state : {
+                            identity : i
+                        }
+                    }
+                }
                 className={`page-links ${active}`}
                 key={i}
             >
-                
-                    {i}
-                
+
+                {i}
+
             </NavLink>
         )
     }

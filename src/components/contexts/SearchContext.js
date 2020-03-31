@@ -15,6 +15,7 @@ const SearchContextProvider = (props) => {
     }
     const closeBurger = () => {
         setBurgerLink(false)
+        localStorage.removeItem('identity')
     }
 
 

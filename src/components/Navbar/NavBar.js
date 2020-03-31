@@ -4,7 +4,6 @@ import { Link, NavLink } from 'react-router-dom'
 import logoPage from './logoPage.png'
 import BurgerButton from './BurgerMenu/BugerButton'
 import { SearchContext } from '../contexts/SearchContext'
-import { withRouter } from 'react-router-dom';
 
 function NavBar() {
   const { closeBurger } = useContext(SearchContext)

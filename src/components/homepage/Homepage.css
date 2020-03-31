@@ -17,6 +17,13 @@
     transition: 0.5s;
 }
 
+@media(min-width : 508px){
+    .img-slider{
+        min-width: 50%;
+    }
+}
+
+
 
 @media(min-width : 768px){
     .img-slider{
@@ -24,11 +31,6 @@
     }
 }
 
-@media (orientation:landscape) {
-    .img-slider{
-        min-width: 50%;
-    }
-}
 
 @media(min-width : 1200px){
   .img-slider{

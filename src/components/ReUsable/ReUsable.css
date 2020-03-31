@@ -408,11 +408,17 @@
     }
     .movie-poster img{
         height: 40vh;
+    
     }
     .cast-slider{
-        min-width: 13.5%;
-        margin: 0% 0.5%;
+        min-width: 15%;
+        margin: 0;
+        padding: 0;
     }
+    .cast-detail{
+        margin: 20px;
+    }
+   
     .cast-slider-con{
         overflow: hidden;
         display: flex;

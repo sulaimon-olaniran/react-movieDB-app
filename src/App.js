@@ -5,7 +5,7 @@ import NavBar from './components/Navbar/NavBar';
 import SearchContextProvider from './components/contexts/SearchContext';
 import PopularPage from './components/PopularPage/PopularPage';
 import UpcomngPage from './components/UpcomingPage/UpcomingPage';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import MovieDetails from './components/ReUsable/MovieDetails';
 import Footer from './components/Footer/Footer';
 import Menu from './Menu';
@@ -26,8 +26,8 @@ function App() {
             <Switch>
               <Route path="/" exact component={Homepage} />
               <Route path="/search" exact component={SearchMovies} />
-              <Route exact path="/search/:movie" component={SearchMovieList} />
-              <Route path="/search/id/:id" component={MovieDetails} />
+              <Route exact path="/search/:movie/:page" component={SearchMovieList} />
+              <Route exact path="/search/:movie/:page/id/:id" component={MovieDetails} />
               <Route exact path="/popular/:page"  component={PopularPage} /> 
               <Route path="/popular/id/:id" exact component={MovieDetails} />
               <Route exact path="/upcoming/:page" component={UpcomngPage} />

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import Movie from '../ReUsable/Movie'
-import Pagination from "react-js-pagination"
 import './PopularPage.css'
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker'
 import { DotLoader } from "react-spinners"
@@ -11,9 +10,10 @@ import PagePagination from '../ReUsable/PagePagination'
 function PopularPage({ match }) {
     const { promiseInProgress } = usePromiseTracker()
     const [movies, setMovies] = useState([])
-    const [activePage, setActivePage] = useState(match.params.page)
     const [allMovies, setAllmovies] = useState(0)
-
+    
+    const activePage = match.params.page
+    
     useEffect(() => {
         trackPromise(
             axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=644c44d2acac97a0ba2dba1edacf5a00&page=${match.params.page}`)
@@ -28,17 +28,12 @@ function PopularPage({ match }) {
                 }))
     }, [match.params.page])
 
-    useEffect(()=>{
-        localStorage.setItem("identity", JSON.stringify(movies.id))
-    }, [movies.id])
-
 
     const numOfPages = Math.floor(allMovies / 20)
 
     return (
 
         <div className="popular-container">
-
             {promiseInProgress ?
                 <div className="img-gallary">
                     <DotLoader
@@ -52,22 +47,25 @@ function PopularPage({ match }) {
                     {
                         movies.map((movie, i) => {
                             return (
+                                
                                 <Movie key={movie.id}
                                     image={movie.poster_path}
                                     title={movie.title}
                                     id={movie.id}
                                     page={"popular"}
                                 />
-
+                               
                             )
                         })
                     }
-                </div>}
+                </div>
+               
+                }
             <div>
                 <PagePagination
                     pages={numOfPages}
                     activePage={activePage}
-                    page={"popular"}
+                    page={"search"}
                 />
             </div>
 
