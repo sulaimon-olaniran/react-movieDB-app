@@ -106,7 +106,7 @@ span {
     color: white;
   }  
   
-  @media (min-width : 520px) {
+  @media (min-width : 500px) {
     .footer-style{
       flex-direction: row;
       justify-content: space-evenly;
