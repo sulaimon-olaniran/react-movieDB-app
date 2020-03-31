@@ -144,7 +144,7 @@ span {
     }
   }
 
-  @media(min-width : 700px){
+  @media(min-width : 760px){
         
     .social-media {
       width: 90%;
