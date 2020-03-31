@@ -9,7 +9,7 @@
 }
 .logo{
   display: flex;
-  width: 30%;
+  width: 20%;
   height: 100%;
   margin-left: 10px;
   justify-content: space-around;
@@ -17,8 +17,11 @@
  
 }
 .logo-image {
-    width: 80%;
+    width: 100%;
     height: 40px;
+}
+.logo-link {
+    width: 100%;
 }
 
 
@@ -73,10 +76,13 @@ li:hover{
 
 @media(min-width : 968px){
   .logo-image{
-      width: 60%;
+      width: 100%;
       height: 60px;
   }
-  .nav-bar ul {
-    display: flex;
-}
+    .nav-bar ul {
+        display: flex;
+    }
+    .logo{
+        width: 15%;
+    }
 }

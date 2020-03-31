@@ -26,10 +26,15 @@ function PagePagination({ pages, activePage, page }) {
 
     }, [activePage])
 
+    const handleIdentity = () =>{
+        localStorage.removeItem('identity')
+    }
+
     for (let i = 1; i <= pages; i++) {
         let active = activePage === i ? "active" : ""
         pageLinks.push(
             <NavLink
+                onClick = {handleIdentity}
                 to={
                     {
                         pathname: `/${page}/${i}`,
@@ -67,7 +72,7 @@ function PagePagination({ pages, activePage, page }) {
     return (
         <div className="pagination-con">
             <div className={buttonClass}>
-                <button onClick={prevPage}>&laquo;</button>
+                <button onClick={prevPage} >&laquo;</button>
             </div>
             <div className="pagination-links">
                 {
@@ -81,7 +86,7 @@ function PagePagination({ pages, activePage, page }) {
             </div>
 
             <div className={buttonClass}>
-                <button onClick={nextPage}>&raquo;</button>
+                <button onClick={nextPage} >&raquo;</button>
             </div>
         </div>
     )

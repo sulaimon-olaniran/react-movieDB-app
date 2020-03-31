@@ -14,7 +14,7 @@ function NavBar() {
   return (
     <nav className="nav-bar">
       <div className="logo">
-        <Link  to="/" onClick={closeBurger}>
+        <Link  to="/" onClick={closeBurger} className="logo-link">
           <img src={logoPage} alt="Logo" className="logo-image"/>
         </Link>
       </div>

@@ -65,7 +65,7 @@ function PopularPage({ match }) {
                 <PagePagination
                     pages={numOfPages}
                     activePage={activePage}
-                    page={"search"}
+                    page={"popular"}
                 />
             </div>
 

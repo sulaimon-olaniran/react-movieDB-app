@@ -9,7 +9,9 @@
 .slide-button{
     display: none;
 }
-
+button{
+    outline: none;
+}
 
 .large{
     display: none;
