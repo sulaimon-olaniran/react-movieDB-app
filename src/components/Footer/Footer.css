@@ -106,7 +106,7 @@ span {
     color: white;
   }  
   
-  @media (min-width : 450px) and (orientation: landscape) {
+  @media  (orientation: landscape) {
     .footer-style{
       flex-direction: row;
       justify-content: space-evenly;
@@ -144,7 +144,7 @@ span {
     }
   }
 
-  @media(min-width : 760px){
+  @media(min-width : 768px){
         
     .social-media {
       width: 90%;

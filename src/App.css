@@ -1,11 +1,7 @@
-html {
-  transform : rotate(0);
- 
-}
 
 .app {
   height: 100%;
- 
+
 }
 .navigation {
   position: fixed;
