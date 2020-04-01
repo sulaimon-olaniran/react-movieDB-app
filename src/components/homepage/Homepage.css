@@ -17,7 +17,7 @@
     transition: 0.5s;
 }
 
-@media(min-width : 508px){
+@media (min-width : 508px){
     .img-slider{
         min-width: 50%;
     }
