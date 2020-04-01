@@ -106,7 +106,6 @@ button{
 .details-section{
     width: 100%;
     min-height: 50vh;
-    margin-top: 2vh;
     border-bottom: 3px solid salmon;
     display: flex;
     align-items: center;
@@ -115,11 +114,13 @@ button{
 }
 .ratings{
     text-align: center;
-   
+    background: rgba(34, 11, 11, 0.5);
+    width: 100%;
 }
 .ratings h3 {
     font-size: 3vh;
     margin: 4px;
+    background: none;
 }
 .ratings p {
     font-size: 2.5vh;
@@ -152,6 +153,12 @@ button{
     width: 100%;
     margin-bottom: 5px;
    
+}
+.large-rate{
+    background: rgba(0,0,0,0.5);
+}
+.large-rate h3 {
+    background: none;
 }
 
 /* for movie.js */

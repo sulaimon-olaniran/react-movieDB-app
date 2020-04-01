@@ -32,7 +32,7 @@ function NavBar() {
           <li>Upcoming</li>
         </NavLink>
       </ul>
-      <div>
+      <div className="test">
         <BurgerButton />
       </div>
     </nav>
