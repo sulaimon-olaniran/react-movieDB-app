@@ -25,7 +25,7 @@
 
 
 
-@media(min-width : 768px){
+@media(min-width : 768px) and (orientation: portrait){
     .img-slider{
         min-width: 50%;
     }

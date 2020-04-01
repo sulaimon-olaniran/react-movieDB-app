@@ -319,7 +319,7 @@ button{
 
 
 
-@media(min-width : 768px){
+@media(min-width : 768px) and (orientation: portrait){
     .movie-details h3{
         background-color: transparent;
     }
