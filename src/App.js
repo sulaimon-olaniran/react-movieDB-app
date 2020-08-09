@@ -16,7 +16,7 @@ import SearchMovieList from './components/SearchPage/SearchMovieList';
 function App() {
   return (
     <SearchContextProvider>
-      
+
         <div className="App">
           <Menu />
           <nav className="navigation">
@@ -28,7 +28,7 @@ function App() {
               <Route path="/search" exact component={SearchMovies} />
               <Route exact path="/search/:movie/:page" component={SearchMovieList} />
               <Route exact path="/search/:movie/:page/id/:id" component={MovieDetails} />
-              <Route exact path="/popular/:page"  component={PopularPage} /> 
+              <Route exact path="/popular/:page"  component={PopularPage} />
               <Route path="/popular/id/:id" exact component={MovieDetails} />
               <Route exact path="/upcoming/:page" component={UpcomngPage} />
               <Route path="/upcoming/id/:id" component={MovieDetails} />
@@ -38,7 +38,7 @@ function App() {
             <Footer />
           </footer>
         </div>
-      
+
     </SearchContextProvider>
   );
 }
