@@ -18,7 +18,7 @@ function PopularPage({ match }) {
         trackPromise(
             axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=644c44d2acac97a0ba2dba1edacf5a00&page=${match.params.page}`)
                 .then(res => {
-                    console.log(res.data.results)
+                    //console.log(res.data.results)
                     setMovies(res.data.results)
                     setAllmovies(res.data.total_results)
                     

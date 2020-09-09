@@ -12,8 +12,8 @@ const Movie = (props) => {
 
     useEffect(() => {
         const getData = localStorage.getItem('identity');
-        if (getData !== null || getData !== undefined ) {
-            document.getElementById(`${getData}`).scrollIntoView(true)
+        if (getData !== null ) {
+            document.getElementById(getData).scrollIntoView(true)
         }
         else {
             window.scrollTo(0, 0)
